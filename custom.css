@@ -1,0 +1,11 @@
+.footer_top_holder {
+  display: none;
+}
+
+.footer_bottom_holder {
+  background-color: #262626;
+}
+
+.qode-cta-section-title {
+  cursor: pointer;
+}
