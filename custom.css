@@ -1,3 +1,12 @@
+#about {
+  background-position: top;
+}
+
+#about,
+.homepage-top-row {
+  border-bottom: 5px solid #0b9444;
+}
+
 .footer_top_holder {
   display: none;
 }
