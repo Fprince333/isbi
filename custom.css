@@ -1,20 +1,33 @@
 #about {
-  background-position: top;
+	background-position: top;
 }
 
 #about,
+.counter-row,
 .homepage-top-row {
-  border-bottom: 5px solid #0b9444;
+	border-bottom: 5px solid #0b9444;
+}
+
+header .header_inner_left {
+	left: 0;
+}
+
+.q_counter_holder {
+	min-height: 153px;
+}
+
+.header_bottom {
+	padding: 0;
 }
 
 .footer_top_holder {
-  display: none;
+	display: none;
 }
 
 .footer_bottom_holder {
-  background-color: #262626;
+	background-color: #262626;
 }
 
 .qode-cta-section-title {
-  cursor: pointer;
+	cursor: pointer;
 }

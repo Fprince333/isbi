@@ -1,4 +1,5 @@
 $j(document).ready(function() {
+  
   $j('.qode-cta-section-title').on('click', function() {
     $j('html, body').animate(
       {
@@ -7,4 +8,9 @@ $j(document).ready(function() {
       800
     );
   });
+
+  $j(".total-members .counter").append("K")
+  $j(".aum .counter").append("B")
+  $j(".returns .counter").append("B")
+  $j(".passive .counter").append("%")
 })
