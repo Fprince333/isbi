@@ -68,3 +68,11 @@ textarea#comment {
 .comment-respond h5 {
 	display: none !important;
 }
+
+.footer_bottom ul li {
+	margin: 0;
+	border-left: 1px solid white;
+	padding: 0 20px;
+	height: 53px;
+	line-height: 53px;
+}
