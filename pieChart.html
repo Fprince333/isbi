@@ -1,0 +1,85 @@
+<script type="text/javascript">
+var sampleData = [{
+  assets: 15,
+  type: "Credit",
+  drilldown: [{
+      assets: 5,
+      type: "High Yield",
+  }, {
+      assets: 8,
+      type: "Opportunistic Debt",
+  }, {
+    assets: 2,
+    type: "Emerging Market Debt"
+  }]
+}, {
+  assets: 22,
+  type: "Bonds",
+  drilldown: [{
+      assets: 14,
+      type: "Intermediate Investment"
+  }, {
+      assets: 4,
+      type: "Long-term Government",
+  }, {
+      assets: 4,
+      type: "TIPS"
+  }]
+}, {
+  assets: 51,
+  type: "Equities",
+  drilldown: [{
+      assets: 23,
+      type: "U.S.",
+  }, {
+      assets: 13,
+      type: "Developed Foreign Equity",
+  }, {
+      assets: 8,
+      type: "Emerging Markets",
+  }, {
+      assets: 7,
+      type: "Private Equity",
+  }]
+}, {
+  assets: 12,
+  type: "Real Estate", 
+  drilldown: [{
+    assets: 5.5,
+    type: "Core real estate", 
+  }, {
+    assets: 4.5,
+    type: "Non-Core real estate",
+  }, {
+    assets: 2,
+    type: "Infrastructure"
+  }]
+}];
+var config = {
+  containerId: "chartContainer",
+  width: 600,
+  height: 600,
+  data: sampleData,
+  label: function(d) {
+      return d.data.type + ": " + d.data.assets + "%";
+  },
+  value: "assets",
+  inner: "drilldown",
+  tooltip: function(d) {
+      console.log(d)
+      return "<div style='background-color: #0b9444; color: white; padding: 5px; text-align: middle; border: solid 1px grey;'><strong>" + d.type + "</strong> is " + d.assets + "%</div>";
+  },
+  transition: "linear",
+  transitionDuration: 500,
+  donutRadius: 50,
+  gradient: true,
+  colors: d3.scale.category20(),
+  labelColor: "black",
+  stroke: "#eee",
+  strokeWidth: 3,
+  drilldownTransition: "linear",
+  drilldownTransitionDuration: 0,
+  highlightColor: "#8cc63e"
+};
+var samplePie = new psd3.Pie(config);  
+</script>
