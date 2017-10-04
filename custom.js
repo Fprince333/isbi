@@ -22,18 +22,5 @@ $j(document).ready(function() {
 	$j('.qode_search_close').on('click', function() {
 		$j("form[role='search']").animate({ opacity: 'hide' });
 	});
-
-	if ($j(".headlines").length) {
-		var i = 0; 
-		function myLoop () {
-			 setTimeout(function () {
-				$j($j(".headlines ul li")[i]).fadeIn("slow");
-					i++;
-					if (i < $j(".headlines ul li").length) {
-						 myLoop();
-					}
-			 }, 400)
-		}
-		myLoop(); 
-	}
+	
 });
