@@ -76,3 +76,13 @@ textarea#comment {
 	height: 53px;
 	line-height: 53px;
 }
+
+text {
+	font-weight: bold;
+	text-shadow: 2px 2px #0b9444;
+	font-size: 14px;
+}
+
+#chartContainer {
+	text-align: center;
+}

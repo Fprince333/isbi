@@ -57,8 +57,8 @@ var sampleData = [{
 }];
 var config = {
   containerId: "chartContainer",
-  width: 400,
-  height: 400,
+  width: 650,
+  height: 650,
   data: sampleData,
   label: function(d) {
       return d.data.type + ": " + d.data.assets + "%";
@@ -73,13 +73,16 @@ var config = {
   transitionDuration: 500,
   donutRadius: 50,
   gradient: true,
-  colors: d3.scale.category20(),
-  labelColor: "black",
+  colors: d3.scale.linear().domain([1,8]).interpolate(d3.interpolateHcl).range([d3.rgb("#818181"), d3.rgb("#8cc63e")]),
+  labelColor: "white",
   stroke: "#eee",
   strokeWidth: 3,
   drilldownTransition: "linear",
   drilldownTransitionDuration: 0,
-  highlightColor: "#8cc63e"
+  highlightColor: "#8cc63e",
+  rotateLabel: true
 };
-var samplePie = new psd3.Pie(config);  
+if (window.location.pathname.indexOf("portfolio") > -1) {
+  var samplePie = new psd3.Pie(config);  
+}
 </script>
