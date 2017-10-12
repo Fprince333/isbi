@@ -1,3 +1,13 @@
+function isScrolledIntoView(elem) {
+	var docViewTop = $j(window).scrollTop();
+	var docViewBottom = docViewTop + $j(window).height();
+
+	var elemTop = $j(elem).offset().top;
+	var elemBottom = elemTop + $j(elem).height();
+
+	return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
 $j(document).ready(function() {
 	$j('.total-members .counter').append('K');
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
@@ -15,12 +25,35 @@ $j(document).ready(function() {
 			800
 		);
 	});
+
 	$j('.search-text').on('click', function() {
 		$j('.form_holder_outer').css('height', $j('.header_inner').height() + 'px');
 		$j("form[role='search']").animate({ opacity: 'show' });
 	});
+
 	$j('.qode_search_close').on('click', function() {
 		$j("form[role='search']").animate({ opacity: 'hide' });
+	})
+
+	$j(window).scroll(function(){
+		if (window.location.pathname.length === 1) {
+			$j.each($j("#menu-header li a"), function( i, v) {
+				$j(v).removeClass("active")
+			});
+			if (isScrolledIntoView('.homepage-top-row') || isScrolledIntoView('.counter-row')) {
+				$j("#menu-header li.home").addClass("active")
+			}
+			if (isScrolledIntoView("#contact-us")) {
+				$j("#menu-header li.contact").addClass("active")
+			} else {
+				$j("#menu-header li.contact").removeClass("active")
+				$j("#menu-header li.contact").removeClass("current_page_item")
+			}
+		}
 	});
-	
+	if (window.location.pathname.length === 1) {
+		$j.each($j("#menu-header li a"), function( i, v) {
+			$j(v).removeClass("active")
+		});
+	}
 });
