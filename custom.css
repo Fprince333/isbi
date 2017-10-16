@@ -1,3 +1,31 @@
+header,
+nav.main_menu > ul > li > a,
+.mobile_menu_button span,
+.side_menu_button > a,
+nav.mobile_menu ul li a,
+nav.mobile_menu ul li h3 {
+	color: black;
+}
+
+@media screen and (min-width: 1130px) {
+	nav.main_menu > ul > li > a,
+	.search-text {
+		font-size: 18px;
+	}
+}
+
+.header_inner_right {
+	display: none;
+}
+
+.mobile_menu {
+	border-top: 1px solid #8cc63e;
+}
+
+.mobile_menu_button {
+	margin: 0 20px;
+}
+
 .counter-row {
 	background-position: top;
 }
@@ -5,36 +33,6 @@
 #menu-footer.menu {
 	text-align: right;
 	padding-right: 15px;
-}
-
-nav.main_menu > ul > li > a {
-	border-left: 1px solid #8cc63e;
-}
-
-header .header_inner_left {
-	left: 15px !important;
-}
-
-@media screen and (min-width: 1000px) {
-	header .header_inner_left {
-		left: 0 !important;
-	}
-}
-
-.side_menu_button_wrapper,
-.side_menu_button {
-	display: flex;
-	align-items: center;
-	font-weight: 600;
-	color: #9d9d9d;
-}
-
-.side_menu_button_wrapper p {
-	padding: 0 17px;
-}
-
-.side_menu_button_wrapper {
-	border-left: 1px solid #8cc63e;
 }
 
 .q_counter_holder {
@@ -49,10 +47,12 @@ input#author,
 input#email,
 input#url {
 	border: 1px solid #0b9444 !important;
+	font-family: inherit;
 }
 
 textarea#comment {
 	border: 1px solid #0b9444;
+	font-family: inherit;
 }
 
 .post_info {
@@ -77,7 +77,6 @@ textarea#comment {
 
 .footer_bottom ul li {
 	margin: 0;
-	border-left: 1px solid white;
 	padding: 0 20px;
 	height: 53px;
 	line-height: 53px;
@@ -91,8 +90,4 @@ text {
 
 #chartContainer {
 	text-align: center;
-}
-
-.mobile_menu {
-	border-top: 1px solid #8cc63e;
 }
