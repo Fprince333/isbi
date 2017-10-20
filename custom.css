@@ -9,7 +9,8 @@ nav.mobile_menu ul li h3 {
 
 @media screen and (min-width: 1130px) {
 	nav.main_menu > ul > li > a,
-	.search-text {
+	.search-text,
+	.footer_bottom ul li a {
 		font-size: 18px;
 	}
 }
@@ -22,6 +23,12 @@ nav.mobile_menu ul li h3 {
 	border-top: 1px solid #8cc63e;
 }
 
+@media screen and (max-width: 768px) { 
+	.mobile_menu {
+		text-align: center !important;
+	}
+}
+
 .mobile_menu_button {
 	margin: 0 20px;
 }
@@ -30,9 +37,11 @@ nav.mobile_menu ul li h3 {
 	background-position: top;
 }
 
-#menu-footer.menu {
-	text-align: right;
-	padding-right: 15px;
+@media screen and (min-width: 768px) { 
+	#menu-footer.menu {
+		text-align: right;
+		padding-right: 15px;
+	}
 }
 
 .q_counter_holder {
