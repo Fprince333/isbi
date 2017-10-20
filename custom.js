@@ -5,7 +5,16 @@ function isScrolledIntoView(elem) {
 	var elemTop = $j(elem).offset().top;
 	var elemBottom = elemTop + $j(elem).height();
 
-	return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+	return elemBottom <= docViewBottom && elemTop >= docViewTop;
+}
+
+function showSecondaryChart(el) {
+	$j('#portfolio-text').hide();
+	$j('#secondary-chart-container').show();
+	Array.from($j('#secondary-chart-container canvas')).forEach(function(elem) {
+		$j(elem).hide();
+	});
+	$j(el).show();
 }
 
 $j(document).ready(function() {
@@ -33,27 +42,49 @@ $j(document).ready(function() {
 
 	$j('.qode_search_close').on('click', function() {
 		$j("form[role='search']").animate({ opacity: 'hide' });
-	})
+	});
 
-	$j(window).scroll(function(){
+	$j(window).scroll(function() {
 		if (window.location.pathname.length === 1) {
-			$j.each($j("#menu-header li a"), function( i, v) {
-				$j(v).removeClass("active")
+			$j.each($j('#menu-header li a'), function(i, v) {
+				$j(v).removeClass('active');
 			});
 			if (isScrolledIntoView('.homepage-top-row') || isScrolledIntoView('.counter-row')) {
-				$j("#menu-header li.home").addClass("active")
+				$j('#menu-header li.home').addClass('active');
 			}
-			if (isScrolledIntoView("#contact-us")) {
-				$j("#menu-header li.contact").addClass("active")
+			if (isScrolledIntoView('#contact-us')) {
+				$j('#menu-header li.contact').addClass('active');
 			} else {
-				$j("#menu-header li.contact").removeClass("active")
-				$j("#menu-header li.contact").removeClass("current_page_item")
+				$j('#menu-header li.contact').removeClass('active');
+				$j('#menu-header li.contact').removeClass('current_page_item');
 			}
 		}
 	});
+
+	$j('.arc').on('hover', function() {
+		let chartId =
+			'#' +
+			$j($j(this).find('text')[0])
+				.text()
+				.toLowerCase()
+				.split(':')[0]
+				.replace(/\./g, '')
+				.replace(/ +/g, '-');
+		showSecondaryChart(chartId);
+	});
+
+	$j('#chartContainer_svg').on('mouseleave', function() {
+		$j('#secondary-chart-container').hide();
+		$j('#portfolio-text').show();
+	});
+
+	$j('#chartContainer_svg').on('click', function(e) {
+		return;
+	});
+
 	if (window.location.pathname.length === 1) {
-		$j.each($j("#menu-header li a"), function( i, v) {
-			$j(v).removeClass("active")
+		$j.each($j('#menu-header li a'), function(i, v) {
+			$j(v).removeClass('active');
 		});
 	}
 });

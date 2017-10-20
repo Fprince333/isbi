@@ -95,3 +95,7 @@ text {
 #chartContainer {
 	text-align: center;
 }
+
+.psd3Tooltip {
+	display: none;
+}
