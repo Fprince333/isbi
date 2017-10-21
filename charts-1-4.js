@@ -248,6 +248,14 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				fontColor: '#8cc63e',
 				fontSize: 30
 			},
+			pieceLabel: {
+				fontColor: function(data) {
+					var rgb = hexToRgb(data.dataset.backgroundColor[data.index]);
+					var threshold = 140;
+					var luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
+					return luminance > threshold ? 'black' : 'white';
+				}
+			},
 			cutoutPercentage: 10,
 			animation: {
 				animateScale: true,
