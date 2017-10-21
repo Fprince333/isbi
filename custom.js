@@ -8,15 +8,6 @@ function isScrolledIntoView(elem) {
 	return elemBottom <= docViewBottom && elemTop >= docViewTop;
 }
 
-function showSecondaryChart(el) {
-	$j('#portfolio-text').hide();
-	$j('#secondary-chart-container').show();
-	Array.from($j('#secondary-chart-container canvas')).forEach(function(elem) {
-		$j(elem).hide();
-	});
-	$j(el).show();
-}
-
 $j(document).ready(function() {
 	$j('.total-members .counter').append('K');
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
@@ -61,25 +52,9 @@ $j(document).ready(function() {
 		}
 	});
 
-	$j('.arc').on('hover', function() {
-		let chartId =
-			'#' +
-			$j($j(this).find('text')[0])
-				.text()
-				.toLowerCase()
-				.split(':')[0]
-				.replace(/\./g, '')
-				.replace(/ +/g, '-');
-		showSecondaryChart(chartId);
-	});
-
-	$j('#chartContainer_svg').on('mouseleave', function() {
+	$j('#portfolio').on('mouseleave', function() {
 		$j('#secondary-chart-container').hide();
 		$j('#portfolio-text').show();
-	});
-
-	$j('#chartContainer_svg').on('click', function(e) {
-		return;
 	});
 
 	if (window.location.pathname.length === 1) {

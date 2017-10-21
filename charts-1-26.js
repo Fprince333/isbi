@@ -1,3 +1,12 @@
+function showSecondaryChart(el) {
+	$j('#portfolio-text').hide();
+	$j('#secondary-chart-container').show();
+	Array.from($j('#secondary-chart-container canvas')).forEach(function(elem) {
+		$j(elem).hide();
+	});
+	$j(el).show();
+}
+
 var portfolioData = {
 	datasets: [
 		{
@@ -248,21 +257,45 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				fontColor: '#8cc63e',
 				fontSize: 30
 			},
-			pieceLabel: {
-				fontColor: function(data) {
-					var rgb = hexToRgb(data.dataset.backgroundColor[data.index]);
-					var threshold = 140;
-					var luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
-					return luminance > threshold ? 'black' : 'white';
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16,
+					filter: function(legendItem, data) {
+						return legendItem.index < 4 ? legendItem : null;
+					}
+				}
+			},
+			tooltips: {
+				callbacks: {
+					label: function(tooltipItem, data) {
+						return (
+							data.labels[tooltipItem.index] +
+							' ' +
+							data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] +
+							'%'
+						);
+					}
 				}
 			},
 			cutoutPercentage: 10,
 			animation: {
 				animateScale: true,
 				duration: 2500
+			},
+			onHover: function(event) {
+				let chartId =
+					'#' +
+					this.active[0]._model.label
+						.toLowerCase()
+						.split(':')[0]
+						.replace(/\./g, '')
+						.replace(/ +/g, '-');
+				showSecondaryChart(chartId);
 			}
 		}
 	});
+
 	var privateEquityChart = new Chart(privateEquity, {
 		type: 'pie',
 		data: privateEquityData,
@@ -272,6 +305,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Private Equity',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -284,6 +323,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Core Real Estate',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -296,6 +341,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Non Core Real Estate',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -308,6 +359,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Infrastructure',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -320,6 +377,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'High Yield',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -332,6 +395,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Opportunistic Debt',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -344,6 +413,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Emerging Market Debt',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -356,6 +431,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Intermediate Investment',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -368,6 +449,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Long Term Government',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -380,6 +467,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'TIPS',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -392,6 +485,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'U.S.',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -404,6 +503,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Developed Foreign Equity',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -416,6 +521,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Emerging Markets',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -428,6 +539,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Equities',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -440,6 +557,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Real Estate',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -452,6 +575,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Credit',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
@@ -464,6 +593,12 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				text: 'Bonds',
 				fontColor: '#8cc63e',
 				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
 			}
 		}
 	});
