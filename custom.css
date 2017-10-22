@@ -7,6 +7,10 @@ nav.mobile_menu ul li h3 {
 	color: black;
 }
 
+h1 {
+	text-shadow: 3px 1px #0b9444;
+}
+
 @media screen and (min-width: 1130px) {
 	nav.main_menu > ul > li > a,
 	.search-text,
@@ -23,7 +27,7 @@ nav.mobile_menu ul li h3 {
 	border-top: 1px solid #8cc63e;
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
 	.mobile_menu {
 		text-align: center !important;
 	}
@@ -37,7 +41,7 @@ nav.mobile_menu ul li h3 {
 	background-position: top;
 }
 
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
 	#menu-footer.menu {
 		text-align: right;
 		padding-right: 15px;
@@ -95,16 +99,6 @@ input#nf-field-3 {
 	line-height: 53px;
 }
 
-text {
-	font-weight: bold;
-	text-shadow: 2px 2px #0b9444;
-	font-size: 14px;
-}
-
 #chartContainer {
 	text-align: center;
-}
-
-.psd3Tooltip {
-	display: none;
 }
