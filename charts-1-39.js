@@ -302,12 +302,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		type: 'doughnut',
 		data: portfolioData,
 		options: {
-			title: {
-				display: true,
-				text: 'Title TBD',
-				fontColor: '#8cc63e',
-				fontSize: 30
-			},
 			legend: {
 				labels: {
 					boxWidth: 100,
@@ -351,12 +345,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		type: 'doughnut',
 		data: portfolioTwoData,
 		options: {
-			title: {
-				display: true,
-				text: 'Title Two TBD',
-				fontColor: '#8cc63e',
-				fontSize: 30
-			},
 			legend: {
 				labels: {
 					boxWidth: 100,
