@@ -51,8 +51,8 @@ var portfolioData = {
 		'Developed Foreign Equity',
 		'Emerging Markets',
 		'Private Equity',
-		'Core real estate',
-		'Non-Core real estate',
+		'Core',
+		'Non-Core',
 		'Infrastructure'
 	]
 };
@@ -229,8 +229,8 @@ var bondsData = {
 
 if (window.location.pathname.indexOf('portfolio') > -1) {
 	var privateEquity = document.getElementById('private-equity');
-	var coreRealEstate = document.getElementById('core-real-estate');
-	var nonCoreRealEstate = document.getElementById('non-core-real-estate');
+	var coreRealEstate = document.getElementById('core');
+	var nonCoreRealEstate = document.getElementById('non-core');
 	var infrastructure = document.getElementById('infrastructure');
 	var highYield = document.getElementById('high-yield');
 	var opportunisticDebt = document.getElementById('opportunistic-debt');
@@ -254,7 +254,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			legend: {
 				labels: {
 					boxWidth: 100,
-					fontSize: 13,
 					filter: function(legendItem, data) {
 						return legendItem.index < 4 ? legendItem : null;
 					}
@@ -288,10 +287,15 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 							var percent = String(Math.round(dataset.data[i] / total * 100)) + '%';
 
 							if (percent === '0%') {
-								console.log(label);
+								console.log('returning');
 							} else {
-								ctx.fillText(label, model.x + x, model.y + y);
-								ctx.fillText(percent, model.x + x, model.y + y + 15);
+								if (label === 'Infrastructure') {
+									ctx.fillText(label, model.x + x, model.y + y - 15);
+									ctx.fillText(percent, model.x + x, model.y + y - 30);
+								} else {
+									ctx.fillText(label, model.x + x, model.y + y);
+									ctx.fillText(percent, model.x + x, model.y + y + 15);
+								}
 							}
 						}
 					});
@@ -303,7 +307,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 					'#' +
 					this.active[0]._model.label
 						.toLowerCase()
-						.split(':')[0]
 						.replace(/\./g, '')
 						.replace(/ +/g, '-');
 				showSecondaryChart(chartId);
