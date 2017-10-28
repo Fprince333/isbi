@@ -309,6 +309,9 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 						.toLowerCase()
 						.replace(/\./g, '')
 						.replace(/ +/g, '-');
+				if (chartId === '#portfolio') {
+					chartId = '#second-portfolio';
+				}
 				showSecondaryChart(chartId);
 			}
 		}
