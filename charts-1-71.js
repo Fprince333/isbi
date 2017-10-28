@@ -57,56 +57,6 @@ var portfolioData = {
 	]
 };
 
-var portfolioTwoData = {
-	datasets: [
-		{
-			data: [0, 0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
-			backgroundColor: [
-				'#1abc9c',
-				'#0b9444',
-				'#8cc63e',
-				'#2ecc71',
-				'#1abc9c',
-				'#1abc9c',
-				'#1abc9c',
-				'#0b9444',
-				'#0b9444',
-				'#0b9444',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
-				'#2ecc71',
-				'#2ecc71',
-				'#2ecc71'
-			]
-		},
-		{
-			data: [15, 22, 51, 12],
-			backgroundColor: ['#1abc9c', '#0b9444', '#8cc63e', '#2ecc71']
-		}
-	],
-	labels: [
-		'Credit',
-		'Bonds',
-		'Equities',
-		'Real Estate',
-		'High Yield',
-		'Opportunistic Debt',
-		'Emerging Market Debt',
-		'Intermediate Investment',
-		'Long-term Government',
-		'TIPS',
-		'U.S.',
-		'Developed Foreign Equity',
-		'Emerging Markets',
-		'Private Equity',
-		'Core real estate',
-		'Non-Core real estate',
-		'Infrastructure'
-	]
-};
-
 var privateEquityData = {
 	datasets: [
 		{
@@ -296,7 +246,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 	var credit = document.getElementById('credit');
 	var bonds = document.getElementById('bonds');
 	var portfolio = document.getElementById('portfolio');
-	var portfolioTwo = document.getElementById('portfolio-2');
 
 	var mainPortfolio = new Chart(portfolio, {
 		type: 'doughnut',
@@ -305,28 +254,49 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			legend: {
 				labels: {
 					boxWidth: 100,
-					fontSize: 16,
+					fontSize: 13,
 					filter: function(legendItem, data) {
 						return legendItem.index < 4 ? legendItem : null;
 					}
 				}
 			},
 			tooltips: {
-				callbacks: {
-					label: function(tooltipItem, data) {
-						return (
-							data.labels[tooltipItem.index] +
-							' ' +
-							data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] +
-							'%'
-						);
-					}
-				}
+				enabled: false
 			},
-			cutoutPercentage: 10,
+			cutoutPercentage: 20,
 			animation: {
 				animateScale: true,
-				duration: 2500
+				duration: 2500,
+				onComplete: function() {
+					var ctx = this.chart.ctx;
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'bottom';
+					this.data.datasets.forEach(function(dataset) {
+						for (var i = 0; i < dataset.data.length; i++) {
+							var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+								total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+								mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+								start_angle = model.startAngle,
+								end_angle = model.endAngle,
+								mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+							var x = mid_radius * Math.cos(mid_angle);
+							var y = mid_radius * Math.sin(mid_angle);
+
+							ctx.fillStyle = '#444';
+							var label = model.label;
+							var percent = String(Math.round(dataset.data[i] / total * 100)) + '%';
+
+							if (percent === '0%') {
+								console.log(label);
+							} else {
+								ctx.fillText(label, model.x + x, model.y + y);
+								ctx.fillText(percent, model.x + x, model.y + y + 15);
+							}
+						}
+					});
+					ctx.destroy();
+				}
 			},
 			onHover: function(event) {
 				let chartId =
@@ -337,39 +307,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 						.replace(/\./g, '')
 						.replace(/ +/g, '-');
 				showSecondaryChart(chartId);
-			}
-		}
-	});
-
-	var secondPortfolio = new Chart(portfolioTwo, {
-		type: 'doughnut',
-		data: portfolioTwoData,
-		options: {
-			legend: {
-				labels: {
-					boxWidth: 100,
-					fontSize: 16,
-					filter: function(legendItem, data) {
-						return legendItem.index < 4 ? legendItem : null;
-					}
-				}
-			},
-			tooltips: {
-				callbacks: {
-					label: function(tooltipItem, data) {
-						return (
-							data.labels[tooltipItem.index] +
-							' ' +
-							data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] +
-							'%'
-						);
-					}
-				}
-			},
-			cutoutPercentage: 10,
-			animation: {
-				animateScale: true,
-				duration: 2500
 			}
 		}
 	});
