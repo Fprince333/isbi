@@ -239,12 +239,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		data: portfolioData,
 		options: {
 			legend: {
-				labels: {
-					boxWidth: 100,
-					filter: function(legendItem, data) {
-						return legendItem.index < 3 ? legendItem : null;
-					}
-				}
+				display: false
 			},
 			tooltips: {
 				enabled: false
