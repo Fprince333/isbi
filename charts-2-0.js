@@ -12,6 +12,7 @@ var portfolioData = {
 		{
 			data: [0, 0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
 			backgroundColor: [
+				'#fff',
 				'#0b9444',
 				'#8cc63e',
 				'#0b9444',
@@ -31,12 +32,12 @@ var portfolioData = {
 			]
 		},
 		{
-			data: [100],
-			backgroundColor: ['#fff']
+			data: [0, 37, 51, 12],
+			backgroundColor: ['#fff', '#0b9444', '#8cc63e', '#2ecc71']
 		},
 		{
-			data: [37, 51, 12],
-			backgroundColor: ['#0b9444', '#8cc63e', '#2ecc71']
+			data: [100],
+			backgroundColor: ['#fff']
 		}
 	],
 	labels: [
@@ -245,9 +246,9 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 	var developedForeignEquity = document.getElementById('developed-foreign-equity');
 	var emergingMarkets = document.getElementById('emerging-markets');
 	var equities = document.getElementById('equities');
-	var realEstate = document.getElementById('real-estate');
+	var realEstate = document.getElementById('real-assets');
 	var fixedIncome = document.getElementById('fixed-income');
-	var centerPortflio = document.getElementById('center-portfolio');
+	var centerPortfolio = document.getElementById('second-portfolio');
 	var portfolio = document.getElementById('portfolio');
 
 	var mainPortfolio = new Chart(portfolio, {
@@ -289,6 +290,8 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 								if (label === 'Infrastructure') {
 									ctx.fillText(label, model.x + x, model.y + y - 15);
 									ctx.fillText(percent, model.x + x, model.y + y - 30);
+								} else if (label === 'Portfolio') {
+									ctx.fillText(label, model.x + x, model.y + y - 20);
 								} else {
 									ctx.fillText(label, model.x + x, model.y + y);
 									ctx.fillText(percent, model.x + x, model.y + y + 15);
@@ -310,9 +313,9 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			}
 		}
 	});
-	var centerPortfolioChart = new Chart(centerPortflio, {
+	var centerPortfolioChart = new Chart(centerPortfolio, {
 		type: 'pie',
-		data: centerPortflioData,
+		data: centerPortfolioData,
 		options: {
 			title: {
 				display: true,
