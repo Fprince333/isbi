@@ -12,27 +12,27 @@ var portfolioData = {
 		{
 			data: [0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
 			backgroundColor: [
-				'#2ecc71',
 				'#0b9444',
 				'#8cc63e',
-				'#2ecc71',
-				'#2ecc71',
-				'#2ecc71',
-				'#2ecc71',
-				'#2ecc71',
-				'#2ecc71',
+				'#0b9444',
+				'#0b9444',
+				'#0b9444',
 				'#0b9444',
 				'#0b9444',
 				'#0b9444',
 				'#0b9444',
 				'#8cc63e',
 				'#8cc63e',
-				'#8cc63e'
+				'#8cc63e',
+				'#8cc63e',
+				'#2ecc71',
+				'#2ecc71',
+				'#2ecc71'
 			]
 		},
 		{
 			data: [37, 51, 12],
-			backgroundColor: ['#2ecc71', '#0b9444', '#8cc63e']
+			backgroundColor: ['#0b9444', '#8cc63e', '#2ecc71']
 		}
 	],
 	labels: [
@@ -242,7 +242,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 				labels: {
 					boxWidth: 100,
 					filter: function(legendItem, data) {
-						return legendItem.index < 4 ? legendItem : null;
+						return legendItem.index < 3 ? legendItem : null;
 					}
 				}
 			},
