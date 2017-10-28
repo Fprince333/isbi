@@ -10,35 +10,30 @@ function showSecondaryChart(el) {
 var portfolioData = {
 	datasets: [
 		{
-			data: [0, 0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
+			data: [0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
 			backgroundColor: [
-				'#1abc9c',
+				'#2ecc71',
 				'#0b9444',
 				'#8cc63e',
 				'#2ecc71',
-				'#1abc9c',
-				'#1abc9c',
-				'#1abc9c',
-				'#0b9444',
-				'#0b9444',
-				'#0b9444',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
 				'#2ecc71',
 				'#2ecc71',
-				'#2ecc71'
+				'#0b9444',
+				'#0b9444',
+				'#0b9444',
+				'#8cc63e',
+				'#8cc63e',
+				'#8cc63e',
+				'#8cc63e'
 			]
 		},
 		{
-			data: [15, 22, 51, 12],
-			backgroundColor: ['#1abc9c', '#0b9444', '#8cc63e', '#2ecc71']
+			data: [37, 51, 12],
+			backgroundColor: ['#2ecc71', '#0b9444', '#8cc63e']
 		}
 	],
 	labels: [
-		'Credit',
-		'Bonds',
+		'Fixed Income',
 		'Equities',
 		'Real Estate',
 		'High Yield',
@@ -61,7 +56,7 @@ var privateEquityData = {
 	datasets: [
 		{
 			data: [70, 30],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -71,7 +66,7 @@ var coreRealEstateData = {
 	datasets: [
 		{
 			data: [65, 35],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -81,7 +76,7 @@ var nonCoreRealEstateData = {
 	datasets: [
 		{
 			data: [55, 45],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -91,7 +86,7 @@ var infrastructureData = {
 	datasets: [
 		{
 			data: [80, 20],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -101,7 +96,7 @@ var highYieldData = {
 	datasets: [
 		{
 			data: [79, 21],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -111,7 +106,7 @@ var opportunisticDebtData = {
 	datasets: [
 		{
 			data: [60, 40],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -121,7 +116,7 @@ var emergingMarketDebtData = {
 	datasets: [
 		{
 			data: [72, 28],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -131,7 +126,7 @@ var intermediateInvestmentData = {
 	datasets: [
 		{
 			data: [93, 7],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -141,7 +136,7 @@ var longTermGovernmentData = {
 	datasets: [
 		{
 			data: [87, 13],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -151,7 +146,7 @@ var tipsData = {
 	datasets: [
 		{
 			data: [94, 6],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -161,7 +156,7 @@ var usData = {
 	datasets: [
 		{
 			data: [53, 47],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -171,7 +166,7 @@ var developedForeignEquityData = {
 	datasets: [
 		{
 			data: [59, 41],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -181,7 +176,7 @@ var emergingMarketsData = {
 	datasets: [
 		{
 			data: [88, 12],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -191,7 +186,7 @@ var equitiesData = {
 	datasets: [
 		{
 			data: [66, 34],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -201,27 +196,17 @@ var realEstateData = {
 	datasets: [
 		{
 			data: [75, 25],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
 };
 
-var creditData = {
+var fixedIncomeData = {
 	datasets: [
 		{
 			data: [69, 31],
-			backgroundColor: ['#3498db', '#e74c3c']
-		}
-	],
-	labels: ['Passive', 'Active']
-};
-
-var bondsData = {
-	datasets: [
-		{
-			data: [85, 15],
-			backgroundColor: ['#3498db', '#e74c3c']
+			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
 	labels: ['Passive', 'Active']
@@ -243,8 +228,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 	var emergingMarkets = document.getElementById('emerging-markets');
 	var equities = document.getElementById('equities');
 	var realEstate = document.getElementById('real-estate');
-	var credit = document.getElementById('credit');
-	var bonds = document.getElementById('bonds');
+	var fixedIncome = document.getElementById('fixed-income');
 	var portfolio = document.getElementById('portfolio');
 
 	var mainPortfolio = new Chart(portfolio, {
@@ -1034,61 +1018,14 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			}
 		}
 	});
-	var creditChart = new Chart(credit, {
+
+	var fixedIncomeChart = new Chart(fixedIncome, {
 		type: 'pie',
-		data: creditData,
+		data: fixedIncomeData,
 		options: {
 			title: {
 				display: true,
-				text: 'Credit',
-				fontColor: '#8cc63e',
-				fontSize: 24
-			},
-			legend: {
-				labels: {
-					boxWidth: 100,
-					fontSize: 16
-				}
-			},
-			animation: {
-				onComplete: function() {
-					var ctx = this.chart.ctx;
-					ctx.textAlign = 'center';
-					ctx.textBaseline = 'bottom';
-
-					this.data.datasets.forEach(function(dataset) {
-						for (var i = 0; i < dataset.data.length; i++) {
-							var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
-								total = dataset._meta[Object.keys(dataset._meta)[0]].total,
-								mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
-								start_angle = model.startAngle,
-								end_angle = model.endAngle,
-								mid_angle = start_angle + (end_angle - start_angle) / 2;
-
-							var x = mid_radius * Math.cos(mid_angle);
-							var y = mid_radius * Math.sin(mid_angle);
-
-							ctx.fillStyle = '#fff';
-							if (i == 3) {
-								// Darker text color for lighter background
-								ctx.fillStyle = '#444';
-							}
-							var percent = String(Math.round(dataset.data[i] / total * 100)) + '%';
-							// Display percent in another line, line break doesn't work for fillText
-							ctx.fillText(percent, model.x + x, model.y + y + 15);
-						}
-					});
-				}
-			}
-		}
-	});
-	var bondsChart = new Chart(bonds, {
-		type: 'pie',
-		data: bondsData,
-		options: {
-			title: {
-				display: true,
-				text: 'Bonds',
+				text: 'Fixed Income',
 				fontColor: '#8cc63e',
 				fontSize: 24
 			},
