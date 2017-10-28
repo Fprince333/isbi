@@ -10,7 +10,7 @@ function showSecondaryChart(el) {
 var portfolioData = {
 	datasets: [
 		{
-			data: [0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
+			data: [0, 0, 0, 0, 5, 8, 2, 14, 4, 4, 23, 13, 8, 7, 5.5, 4.5, 2],
 			backgroundColor: [
 				'#0b9444',
 				'#8cc63e',
@@ -31,14 +31,19 @@ var portfolioData = {
 			]
 		},
 		{
+			data: [100],
+			backgroundColor: ['#fff']
+		},
+		{
 			data: [37, 51, 12],
 			backgroundColor: ['#0b9444', '#8cc63e', '#2ecc71']
 		}
 	],
 	labels: [
+		'Portfolio',
 		'Fixed Income',
 		'Equities',
-		'Real Estate',
+		'Real Assets',
 		'High Yield',
 		'Opportunistic Debt',
 		'Emerging Market Debt',
@@ -53,6 +58,16 @@ var portfolioData = {
 		'Non-Core',
 		'Infrastructure'
 	]
+};
+
+var centerPortfolioData = {
+	datasets: [
+		{
+			data: [70, 30],
+			backgroundColor: ['#3498db', '#f1c40f']
+		}
+	],
+	labels: ['Passive', 'Active']
 };
 
 var privateEquityData = {
@@ -232,10 +247,11 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 	var equities = document.getElementById('equities');
 	var realEstate = document.getElementById('real-estate');
 	var fixedIncome = document.getElementById('fixed-income');
+	var centerPortflio = document.getElementById('center-portfolio');
 	var portfolio = document.getElementById('portfolio');
 
 	var mainPortfolio = new Chart(portfolio, {
-		type: 'doughnut',
+		type: 'pie',
 		data: portfolioData,
 		options: {
 			legend: {
@@ -244,7 +260,6 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			tooltips: {
 				enabled: false
 			},
-			cutoutPercentage: 20,
 			animation: {
 				animateScale: true,
 				duration: 2500,
@@ -295,7 +310,54 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 			}
 		}
 	});
+	var centerPortfolioChart = new Chart(centerPortflio, {
+		type: 'pie',
+		data: centerPortflioData,
+		options: {
+			title: {
+				display: true,
+				text: 'Portfolio',
+				fontColor: '#8cc63e',
+				fontSize: 24
+			},
+			legend: {
+				labels: {
+					boxWidth: 100,
+					fontSize: 16
+				}
+			},
+			animation: {
+				onComplete: function() {
+					var ctx = this.chart.ctx;
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'bottom';
 
+					this.data.datasets.forEach(function(dataset) {
+						for (var i = 0; i < dataset.data.length; i++) {
+							var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
+								total = dataset._meta[Object.keys(dataset._meta)[0]].total,
+								mid_radius = model.innerRadius + (model.outerRadius - model.innerRadius) / 2,
+								start_angle = model.startAngle,
+								end_angle = model.endAngle,
+								mid_angle = start_angle + (end_angle - start_angle) / 2;
+
+							var x = mid_radius * Math.cos(mid_angle);
+							var y = mid_radius * Math.sin(mid_angle);
+
+							ctx.fillStyle = '#fff';
+							if (i == 3) {
+								// Darker text color for lighter background
+								ctx.fillStyle = '#444';
+							}
+							var percent = String(Math.round(dataset.data[i] / total * 100)) + '%';
+							// Display percent in another line, line break doesn't work for fillText
+							ctx.fillText(percent, model.x + x, model.y + y + 15);
+						}
+					});
+				}
+			}
+		}
+	});
 	var privateEquityChart = new Chart(privateEquity, {
 		type: 'pie',
 		data: privateEquityData,
@@ -350,7 +412,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		options: {
 			title: {
 				display: true,
-				text: 'Core Real Estate',
+				text: 'Core Real Assets',
 				fontColor: '#8cc63e',
 				fontSize: 24
 			},
@@ -398,7 +460,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		options: {
 			title: {
 				display: true,
-				text: 'Non Core Real Estate',
+				text: 'Non Core Real Assets',
 				fontColor: '#8cc63e',
 				fontSize: 24
 			},
@@ -974,7 +1036,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		options: {
 			title: {
 				display: true,
-				text: 'Real Estate',
+				text: 'Real Assets',
 				fontColor: '#8cc63e',
 				fontSize: 24
 			},
