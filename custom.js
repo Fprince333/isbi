@@ -9,11 +9,9 @@ function isScrolledIntoView(elem) {
 }
 
 $j(document).ready(function() {
-	$j('.total-members .counter').append('K');
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
-	$j('.aum .counter').append('<span style="float:left">B</span>');
-	$j('.returns .counter').prepend('<span style="float:left">$</span>');
-	$j('.returns .counter').append('<span style="float:left">B</span>');
+	$j('.aum .counter').append('<span style="float:left"> Billion</span>');
+	$j('.returns .counter').append('<span style="float:left">%</span>');
 	$j('.passive .counter').append('%');
 	$j('.side_menu_button_wrapper').prepend('<p class="search-text">SEARCH</p>');
 
