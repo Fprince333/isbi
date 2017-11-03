@@ -1,0 +1,125 @@
+.homepage-top-row {
+    min-height: 90vh;
+    background-position: top !important;
+}
+
+@media screen and (min-width: 1075px) {
+    .homepage-top-row {
+        animation: background-zoom 10s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes background-zoom {
+    0% {
+        background-size: 125% auto;
+        -webkit-background-size: 125% auto;
+    }
+    100% {
+        background-size: 175% auto;
+        -webkit-background-size: 175% auto;
+    }
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+    .about-us-column {
+        width: 93%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .about-us-column {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .about-us-column>div {
+        width: 90% !important;
+    }
+}
+
+.service_table_inner ul {
+    margin: 0 0 0 15px;
+    padding: 0 15px !important;
+}
+
+.service_table_inner li.service_table_content {
+    padding: 10px;
+    min-height: 228px;
+}
+
+.service_table_inner li li {
+    display: list-item;
+    list-style: disc;
+    padding: 5px;
+}
+
+.service_table_inner li.service_table_title_holder {
+    padding: 10px 10px 10px;
+}
+
+.service_table_content ul {
+    list-style-type: initial;
+}
+
+.service_table_content li {
+    border-color: white;
+    text-align: left;
+}
+
+.q_counter_holder {
+    min-height: 125px;
+}
+
+.counter_text {
+    font-weight: 900;
+    color: #0b9444;
+}
+
+@media screen and (width: 768px) {
+    .about-us-gutter {
+        width: 100%;
+    }
+    .total-members,
+    .aum,
+    .returns,
+    .passive {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .service_table_inner li.service_table_content {
+        min-height: 306px;
+    }
+    .q_counter_holder {
+        padding: 20px 10px !important;
+    }
+    .returns .counter_text {
+        font-size: 11px !important;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .service_table_inner li.service_table_content {
+        min-height: 254px;
+    }
+    .counter {
+        font-size: 23px !important;
+    }
+    .q_counter_holder {
+        min-height: 140px;
+    }
+}
+
+.about-text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
