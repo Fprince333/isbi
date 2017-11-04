@@ -1,19 +1,12 @@
-function isScrolledIntoView(elem) {
-	var docViewTop = $j(window).scrollTop();
-	var docViewBottom = docViewTop + $j(window).height();
-
-	var elemTop = $j(elem).offset().top;
-	var elemBottom = elemTop + $j(elem).height();
-
-	return elemBottom <= docViewBottom && elemTop >= docViewTop;
-}
-
 $j(document).ready(function() {
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
 	$j('.passive .counter').append('%');
 	$j('.side_menu_button_wrapper').prepend('<p class="search-text">SEARCH</p>');
+	$j('#menu-footer').prepend(
+		'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 || Chicago, IL  60601 || <a style="font-size: inherit" href="tel:312-793-5718">312-793-5718</a></li>'
+	);
 
 	$j('.search-text').on('click', function() {
 		$j('.form_holder_outer').css('height', $j('.header_inner').height() + 'px');
