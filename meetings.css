@@ -27,3 +27,33 @@
 		font-size: 9px;
 	}
 }
+
+.q_image_with_text_over .desc,
+.q_image_with_text_over .text:hover .caption,
+.q_image_with_text_over .text:hover .icon_holder {
+	opacity: 1 !important;
+}
+
+.q_image_with_text_over .caption.no_icon {
+	margin-top: 70px;
+}
+
+@media screen and (max-width: 767px) {
+	.q_image_with_text_over .caption.no_icon {
+		font-size: 3em;
+		margin-top: 225px;
+	}
+}
+
+@media screen and (width: 768px) {
+	.q_image_with_text_over .caption.no_icon {
+		font-size: 3em;
+		margin-top: 170px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+	.q_image_with_text_over .caption.no_icon {
+		font-size: 1.25em;
+	}
+}
