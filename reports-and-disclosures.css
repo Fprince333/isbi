@@ -1,0 +1,26 @@
+.container {
+	background-color: transparent !important;
+}
+
+.qode-accordion-content-inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.q_elements_item {
+	width: 25%;
+}
+
+.qode-banner .qode-banner-content {
+	background-color: transparent;
+	font-size: 16px;
+	line-height: 1em;
+	color: black;
+}
+
+@media screen and (max-width: 480px) {
+	.qode-banner .qode-banner-content {
+		font-size: 9px;
+	}
+}
