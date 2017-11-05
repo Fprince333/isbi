@@ -1,4 +1,3 @@
-
 function showSecondaryChart(el) {
 	$j('#portfolio-text').hide();
 	$j('#secondary-chart-container').show();
@@ -256,6 +255,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 		type: 'pie',
 		data: portfolioData,
 		options: {
+			responsive: false,
 			legend: {
 				display: false
 			},
@@ -282,7 +282,7 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 							var y = mid_radius * Math.sin(mid_angle);
 
 							ctx.fillStyle = '#444';
-							ctx.font = "12px Lato";
+							ctx.font = '12px Lato';
 							var label = model.label;
 							var percent = String(Math.round(dataset.data[i] / total * 100)) + '%';
 
@@ -290,39 +290,45 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 								console.log('returning');
 							} else {
 								if (label === 'Infrastructure') {
-									ctx.fillText("Infra-", model.x + x, model.y + y - 15);									
-									ctx.fillText("structure", model.x + x, model.y + y);
-									ctx.fillText("2%", model.x + x, model.y + y - 30);
+									ctx.fillText('Infra-', model.x + x, model.y + y - 15);
+									ctx.fillText('structure', model.x + x, model.y + y);
+									ctx.fillText('2%', model.x + x, model.y + y - 30);
 								} else if (label === 'Non-Core') {
 									ctx.fillText(label, model.x + x, model.y + y);
-									ctx.fillText("4.5%", model.x + x, model.y + y + 15);
-								} else if (label === "Core") {
+									ctx.fillText('4.5%', model.x + x, model.y + y + 15);
+								} else if (label === 'Core') {
 									ctx.fillText(label, model.x + x, model.y + y);
-									ctx.fillText("5.5%", model.x + x, model.y + y + 15);
+									ctx.fillText('5.5%', model.x + x, model.y + y + 15);
 								} else if (label === 'Emerging Market Debt') {
-									ctx.fillText(label.split(" ")[0] + " " + label.split(" ")[1], model.x + x, model.y + y + 10);									
-									ctx.fillText(label.split(" ")[2] + " " + "2%", model.x + x, model.y + y + 25);
+									ctx.fillText(
+										label.split(' ')[0] + ' ' + label.split(' ')[1],
+										model.x + x,
+										model.y + y + 10
+									);
+									ctx.fillText(label.split(' ')[2] + ' ' + '2%', model.x + x, model.y + y + 25);
 								} else if (label === 'Intermediate Investment') {
-									ctx.fillText(label.split(" ")[0], model.x + x, model.y + y);
-									ctx.fillText(label.split(" ")[1], model.x + x, model.y + y + 15);
-									ctx.fillText("14%", model.x + x, model.y + y + 30);
-								} else if (label === 'Long-term Government'){
-									ctx.fillText(label.split(" ")[0], model.x + x, model.y + y);
-									ctx.fillText(label.split(" ")[1], model.x + x, model.y + y + 15);
-									ctx.fillText("4%", model.x + x, model.y + y + 30);
+									ctx.fillText(label.split(' ')[0], model.x + x, model.y + y);
+									ctx.fillText(label.split(' ')[1], model.x + x, model.y + y + 15);
+									ctx.fillText('14%', model.x + x, model.y + y + 30);
+								} else if (label === 'Long-term Government') {
+									ctx.fillText(label.split(' ')[0], model.x + x, model.y + y);
+									ctx.fillText(label.split(' ')[1], model.x + x, model.y + y + 15);
+									ctx.fillText('4%', model.x + x, model.y + y + 30);
 								} else if (label === 'TIPS') {
 									ctx.fillText(label, model.x + x, model.y + y);
-									ctx.fillText("4%", model.x + x, model.y + y + 15);
+									ctx.fillText('4%', model.x + x, model.y + y + 15);
 								} else if (label === 'Developed Foreign Equity') {
-									ctx.fillText(label.split(" ")[0] + " " + label.split(" ")[1], model.x + x, model.y + y);
-									ctx.fillText(label.split(" ")[2] + " " + percent, model.x + x, model.y + y + 15);
+									ctx.fillText(
+										label.split(' ')[0] + ' ' + label.split(' ')[1],
+										model.x + x,
+										model.y + y
+									);
+									ctx.fillText(label.split(' ')[2] + ' ' + percent, model.x + x, model.y + y + 15);
 								} else if (label === 'Portfolio') {
-									ctx.shadowOffsetX = "3"
-									ctx.shadowOffsetY = "1"
-									ctx.fillStyle = "#8cc63e"
-									ctx.font = "24px Lato"
-									ctx.shadowColor = "#0b9444"
-									ctx.fillText(label, model.x + x, model.y + y - 20);
+									ctx.fillStyle = '#8cc63e';
+									ctx.font = '24px Lato';
+									ctx.fillText(label, model.x + x, model.y + y);
+									ctx.fillText('Entire', model.x + x, model.y + y - 25);
 								} else {
 									ctx.fillText(label, model.x + x, model.y + y);
 									ctx.fillText(percent, model.x + x, model.y + y + 15);
