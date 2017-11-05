@@ -10,7 +10,7 @@ function showSecondaryChart(el) {
 var portfolioData = {
 	datasets: [
 		{
-			data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 5, 4, 3],
+			data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 5, 4, 3, 23, 13, 8, 7],
 			backgroundColor: [
 				'#fff',
 				'#0b9444',
@@ -22,18 +22,18 @@ var portfolioData = {
 				'#0b9444',
 				'#0b9444',
 				'#0b9444',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
-				'#8cc63e',
 				'#2ecc71',
 				'#2ecc71',
-				'#2ecc71'
+				'#2ecc71',
+				'#8cc63e',
+				'#8cc63e',
+				'#8cc63e',
+				'#8cc63e'
 			]
 		},
 		{
-			data: [0, 37, 51, 12],
-			backgroundColor: ['#fff', '#0b9444', '#8cc63e', '#2ecc71']
+			data: [0, 37, 12, 51],
+			backgroundColor: ['#fff', '#0b9444', '#2ecc71', '#8cc63e']
 		},
 		{
 			data: [100],
@@ -51,13 +51,13 @@ var portfolioData = {
 		'Intermediate Investment',
 		'Long-term Government',
 		'TIPS',
+		'Core',
+		'Non-Core',
+		'Infrastructure',
 		'U.S.',
 		'Developed Foreign Equity',
 		'Emerging Markets',
-		'Private Equity',
-		'Core',
-		'Non-Core',
-		'Infrastructure'
+		'Private Equity'
 	]
 };
 
@@ -290,9 +290,9 @@ if (window.location.pathname.indexOf('portfolio') > -1) {
 								console.log('returning');
 							} else {
 								if (label === 'Infrastructure') {
-									ctx.fillText('Infra-', model.x + x, model.y + y - 15);
-									ctx.fillText('structure', model.x + x, model.y + y);
-									ctx.fillText('2%', model.x + x, model.y + y - 30);
+									ctx.fillText('Infra-', model.x + x, model.y + y);
+									ctx.fillText('structure', model.x + x, model.y + y + 15);
+									ctx.fillText('2%', model.x + x, model.y + y + 30);
 								} else if (label === 'Non-Core') {
 									ctx.fillText(label, model.x + x, model.y + y);
 									ctx.fillText('4.5%', model.x + x, model.y + y + 15);
