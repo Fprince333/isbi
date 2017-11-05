@@ -1,4 +1,41 @@
+// Download a file form a url.
+function saveFile(url) {
+	// Get file name from url.
+	var filename = url.substring(url.lastIndexOf('/') + 1).split('?')[0];
+	var xhr = new XMLHttpRequest();
+	xhr.responseType = 'blob';
+	xhr.onload = function() {
+		var a = document.createElement('a');
+		a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
+		a.download = filename; // Set the file name.
+		a.style.display = 'none';
+		document.body.appendChild(a);
+		a.click();
+	};
+	xhr.open('GET', url);
+	xhr.send();
+}
+
+function adjustPopUpCss() {
+	var poll = setInterval(function() {
+		addCss();
+	}, 500);
+	function addCss() {
+		if ($j('.active').length) {
+			$j('.download-pdf').css(
+				'height',
+				$j($j('.active .download-pdf').closest('.image_with_text')[0]).height() + 'px'
+			);
+			$j('.download-pdf').css('width', '100%');
+			$j('.download-pdf').css('position', 'absolute');
+			$j('.download-pdf').css('top', '0');
+			clearInterval(poll);
+		}
+	}
+}
+
 $j(document).ready(function() {
+	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
@@ -21,4 +58,18 @@ $j(document).ready(function() {
 		$j('#secondary-chart-container').hide();
 		$j('#portfolio-text').show();
 	});
+
+	if (isMeetingsPage) {
+		$j('.popup-selector').each(function(i) {
+			$j(this)
+				.closest('.text')
+				.css('cursor', 'pointer')
+				.addClass($j(this).data().id);
+		});
+		setInterval(adjustPopUpCss, 500);
+		$j('.download-pdf').click(function(e) {
+			e.preventDefault();
+			saveFile($j(this).data().file);
+		});
+	}
 });
