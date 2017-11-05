@@ -35,20 +35,20 @@
 }
 
 .q_image_with_text_over .caption.no_icon {
-	margin-top: 70px;
+	margin-top: 25px;
 }
 
 @media screen and (max-width: 767px) {
 	.q_image_with_text_over .caption.no_icon {
 		font-size: 3em;
-		margin-top: 225px;
+		margin-top: 60px;
 	}
 }
 
 @media screen and (width: 768px) {
 	.q_image_with_text_over .caption.no_icon {
 		font-size: 3em;
-		margin-top: 170px;
+		margin-top: 50px;
 	}
 }
 
@@ -56,4 +56,20 @@
 	.q_image_with_text_over .caption.no_icon {
 		font-size: 1.25em;
 	}
+}
+
+.active .popmake-title {
+	text-align: center !important;
+	line-height: 2em !important;
+}
+
+.active .popmake-content {
+	display: flex;
+	text-align: center;
+}
+
+.active .image_with_text img {
+	max-height: 362px;
+	margin: 0 auto;
+	margin-bottom: 15px;
 }
