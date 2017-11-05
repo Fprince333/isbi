@@ -29,6 +29,7 @@ function adjustPopUpCss() {
 			$j('.download-pdf').css('width', '100%');
 			$j('.download-pdf').css('position', 'absolute');
 			$j('.download-pdf').css('top', '0');
+			$j('.download-pdf').css('cursor', 'pointer');
 			clearInterval(poll);
 		}
 	}
