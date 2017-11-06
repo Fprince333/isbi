@@ -37,6 +37,7 @@ function adjustPopUpCss() {
 
 $j(document).ready(function() {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
+	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
@@ -71,6 +72,18 @@ $j(document).ready(function() {
 		$j('.download-pdf').click(function(e) {
 			e.preventDefault();
 			saveFile($j(this).data().file);
+		});
+	}
+
+	if (isReportsAndDisclosuresPage) {
+		$j('.caption').each(function(i) {
+			$j(this).css('color', '#8cc63e');
+			$j(this).html(
+				$j(this)
+					.text()
+					.split(' ')
+					.join('<br>')
+			);
 		});
 	}
 });
