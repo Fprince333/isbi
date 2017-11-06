@@ -64,7 +64,7 @@ var portfolioData = {
 var centerPortfolioData = {
 	datasets: [
 		{
-			data: [70, 30],
+			data: [76.5, 23.5],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -74,7 +74,7 @@ var centerPortfolioData = {
 var privateEquityData = {
 	datasets: [
 		{
-			data: [70, 30],
+			data: [0, 100],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -84,7 +84,7 @@ var privateEquityData = {
 var coreRealEstateData = {
 	datasets: [
 		{
-			data: [65, 35],
+			data: [100, 0],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -94,7 +94,7 @@ var coreRealEstateData = {
 var nonCoreRealEstateData = {
 	datasets: [
 		{
-			data: [55, 45],
+			data: [0, 100],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -104,7 +104,7 @@ var nonCoreRealEstateData = {
 var infrastructureData = {
 	datasets: [
 		{
-			data: [80, 20],
+			data: [0, 100],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -114,7 +114,7 @@ var infrastructureData = {
 var highYieldData = {
 	datasets: [
 		{
-			data: [79, 21],
+			data: [0, 100],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -124,7 +124,7 @@ var highYieldData = {
 var opportunisticDebtData = {
 	datasets: [
 		{
-			data: [60, 40],
+			data: [0, 100],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -134,7 +134,7 @@ var opportunisticDebtData = {
 var emergingMarketDebtData = {
 	datasets: [
 		{
-			data: [72, 28],
+			data: [100, 0],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -144,7 +144,7 @@ var emergingMarketDebtData = {
 var intermediateInvestmentData = {
 	datasets: [
 		{
-			data: [93, 7],
+			data: [95, 5],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -154,7 +154,7 @@ var intermediateInvestmentData = {
 var longTermGovernmentData = {
 	datasets: [
 		{
-			data: [87, 13],
+			data: [95.2, 4.8],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -164,7 +164,7 @@ var longTermGovernmentData = {
 var tipsData = {
 	datasets: [
 		{
-			data: [94, 6],
+			data: [99.4, 0.6],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -174,7 +174,7 @@ var tipsData = {
 var usData = {
 	datasets: [
 		{
-			data: [53, 47],
+			data: [90.3, 9.7],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -184,7 +184,7 @@ var usData = {
 var developedForeignEquityData = {
 	datasets: [
 		{
-			data: [59, 41],
+			data: [70.7, 29.3],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -194,7 +194,7 @@ var developedForeignEquityData = {
 var emergingMarketsData = {
 	datasets: [
 		{
-			data: [88, 12],
+			data: [83.4, 16.6],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -204,7 +204,7 @@ var emergingMarketsData = {
 var equitiesData = {
 	datasets: [
 		{
-			data: [66, 34],
+			data: [78.4, 21.6],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
@@ -214,7 +214,7 @@ var equitiesData = {
 var realEstateData = {
 	datasets: [
 		{
-			data: [75, 25],
+			data: [59.1, 40.9],
 			backgroundColor: ['#3498db', '#f1c40f']
 		}
 	],
