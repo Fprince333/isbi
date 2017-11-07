@@ -30,6 +30,20 @@ function adjustPopUpCss() {
 			$j('.download-pdf').css('position', 'absolute');
 			$j('.download-pdf').css('top', '0');
 			$j('.download-pdf').css('cursor', 'pointer');
+			$j('.active h3').each(function(i) {
+				if (
+					$j(this)
+						.html()
+						.indexOf('<br>') === -1
+				) {
+					$j(this).html(
+						$j(this)
+							.text()
+							.split(' ')
+							.join('<br>')
+					);
+				}
+			});
 			clearInterval(poll);
 		}
 	}
