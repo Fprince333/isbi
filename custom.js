@@ -90,6 +90,12 @@ $j(document).ready(function() {
 	}
 
 	if (isReportsAndDisclosuresPage) {
+		$j('.popup-selector').each(function(i) {
+			$j(this)
+				.closest('.text')
+				.css('cursor', 'pointer')
+				.addClass($j(this).data().id);
+		});
 		$j('.caption').each(function(i) {
 			$j(this).html(
 				$j(this)
