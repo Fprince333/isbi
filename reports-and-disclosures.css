@@ -34,3 +34,11 @@
 .q_image_with_text_over .text:hover .caption {
 	opacity: 1;
 }
+
+h3.caption {
+	font-size: 13px;
+}
+
+h6 {
+	font-size: 10px;
+}
