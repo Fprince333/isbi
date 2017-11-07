@@ -91,7 +91,6 @@ $j(document).ready(function() {
 
 	if (isReportsAndDisclosuresPage) {
 		$j('.caption').each(function(i) {
-			$j(this).css('color', '#8cc63e');
 			$j(this).html(
 				$j(this)
 					.text()
