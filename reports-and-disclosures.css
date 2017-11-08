@@ -6,6 +6,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	padding: 15px;
+	background-color: white;
 }
 
 .q_elements_item {
