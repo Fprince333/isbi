@@ -111,6 +111,7 @@ $j(document).ready(function() {
 
 	if (isReportsAndDisclosuresPage) {
 		setInterval(adjustPdfCss, 500);
+		setInterval(adjustPopUpCss, 500);
 		$j('.download-pdf').css('cursor', 'pointer');
 		$j('.download-pdf').click(function(e) {
 			e.preventDefault();
