@@ -4,7 +4,7 @@ function saveFile(url) {
 	var filename = url.substring(url.lastIndexOf('/') + 1).split('?')[0];
 	var xhr = new XMLHttpRequest();
 	xhr.responseType = 'blob';
-	xhr.onload = function() {
+	xhr.onload = function () {
 		var a = document.createElement('a');
 		a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
 		a.download = filename; // Set the file name.
@@ -17,29 +17,32 @@ function saveFile(url) {
 }
 
 function adjustPdfCss() {
-	var poll = setInterval(function() {
+	var poll = setInterval(function () {
 		updateCss();
 	}, 500);
+
 	function updateCss() {
 		if (
 			$j('.caption')
-				.parent()
-				.height() > 0
+			.parent()
+			.height() > 0
 		) {
 			$j('.download-pdf').css(
 				'height',
 				$j('.caption')
-					.parent()
-					.height()
+				.parent()
+				.height()
 			);
+			clearInterval(poll)
 		}
 	}
 }
 
 function adjustPopUpCss() {
-	var poll = setInterval(function() {
+	var poll = setInterval(function () {
 		addCss();
 	}, 500);
+
 	function addCss() {
 		if ($j('.active').length) {
 			$j('.download-pdf').css(
@@ -50,17 +53,17 @@ function adjustPopUpCss() {
 			$j('.download-pdf').css('position', 'absolute');
 			$j('.download-pdf').css('top', '0');
 			$j('.download-pdf').css('cursor', 'pointer');
-			$j('.active h3').each(function(i) {
+			$j('.active h3').each(function (i) {
 				if (
 					$j(this)
-						.html()
-						.indexOf('<br>') === -1
+					.html()
+					.indexOf('<br>') === -1
 				) {
 					$j(this).html(
 						$j(this)
-							.text()
-							.split(' ')
-							.join('<br>')
+						.text()
+						.split(' ')
+						.join('<br>')
 					);
 				}
 			});
@@ -69,7 +72,7 @@ function adjustPopUpCss() {
 	}
 }
 
-$j(document).ready(function() {
+$j(document).ready(function () {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
@@ -81,29 +84,33 @@ $j(document).ready(function() {
 		'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 || Chicago, IL  60601 || <a style="font-size: inherit" href="tel:312-793-5718">312-793-5718</a></li>'
 	);
 
-	$j('.search-text').on('click', function() {
+	$j('.search-text').on('click', function () {
 		$j('.form_holder_outer').css('height', $j('.header_inner').height() + 'px');
-		$j("form[role='search']").animate({ opacity: 'show' });
+		$j("form[role='search']").animate({
+			opacity: 'show'
+		});
 	});
 
-	$j('.qode_search_close').on('click', function() {
-		$j("form[role='search']").animate({ opacity: 'hide' });
+	$j('.qode_search_close').on('click', function () {
+		$j("form[role='search']").animate({
+			opacity: 'hide'
+		});
 	});
 
-	$j('#portfolio').on('mouseleave', function() {
+	$j('#portfolio').on('mouseleave', function () {
 		$j('#secondary-chart-container').hide();
 		$j('#portfolio-text').show();
 	});
 
 	if (isMeetingsPage) {
-		$j('.popup-selector').each(function(i) {
+		$j('.popup-selector').each(function (i) {
 			$j(this)
 				.closest('.text')
 				.css('cursor', 'pointer')
 				.addClass($j(this).data().id);
 		});
 		setInterval(adjustPopUpCss, 500);
-		$j('.download-pdf').click(function(e) {
+		$j('.download-pdf').click(function (e) {
 			e.preventDefault();
 			saveFile($j(this).data().file);
 		});
@@ -113,22 +120,22 @@ $j(document).ready(function() {
 		setInterval(adjustPdfCss, 500);
 		setInterval(adjustPopUpCss, 500);
 		$j('.download-pdf').css('cursor', 'pointer');
-		$j('.download-pdf').click(function(e) {
+		$j('.download-pdf').click(function (e) {
 			e.preventDefault();
 			saveFile($j(this).data().file);
 		});
-		$j('.popup-selector').each(function(i) {
+		$j('.popup-selector').each(function (i) {
 			$j(this)
 				.closest('.text')
 				.css('cursor', 'pointer')
 				.addClass($j(this).data().id);
 		});
-		$j('.caption').each(function(i) {
+		$j('.caption').each(function (i) {
 			$j(this).html(
 				$j(this)
-					.text()
-					.split(' ')
-					.join('<br>')
+				.text()
+				.split(' ')
+				.join('<br>')
 			);
 		});
 	}
