@@ -16,6 +16,26 @@ function saveFile(url) {
 	xhr.send();
 }
 
+function adjustPdfCss() {
+	var poll = setInterval(function() {
+		updateCss();
+	}, 500);
+	function updateCss() {
+		if (
+			$j('.caption')
+				.parent()
+				.height() > 0
+		) {
+			$j('.download-pdf').css(
+				'height',
+				$j('.caption')
+					.parent()
+					.height()
+			);
+		}
+	}
+}
+
 function adjustPopUpCss() {
 	var poll = setInterval(function() {
 		addCss();
@@ -90,6 +110,12 @@ $j(document).ready(function() {
 	}
 
 	if (isReportsAndDisclosuresPage) {
+		setInterval(adjustPdfCss, 500);
+		$j('.download-pdf').css('cursor', 'pointer');
+		$j('.download-pdf').click(function(e) {
+			e.preventDefault();
+			saveFile($j(this).data().file);
+		});
 		$j('.popup-selector').each(function(i) {
 			$j(this)
 				.closest('.text')
