@@ -1,87 +1,94 @@
 .container {
-	background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .qode-accordion-content-inner {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .wpb_text_column {
-	width: 100%;
+    width: 100%;
 }
 
 .q_elements_item {
-	width: 25%;
+    width: 25%;
 }
 
 .qode-banner .qode-banner-content {
-	background-color: transparent;
-	font-size: 16px;
-	line-height: 1em;
-	color: black;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1em;
+    color: black;
 }
 
 @media screen and (max-width: 480px) {
-	.qode-banner .qode-banner-content {
-		font-size: 9px;
-	}
+    .qode-banner .qode-banner-content {
+        font-size: 9px;
+    }
 }
 
 .q_image_with_text_over .desc,
 .q_image_with_text_over .text:hover .caption,
 .q_image_with_text_over .text:hover .icon_holder {
-	opacity: 1 !important;
+    opacity: 1 !important;
 }
 
 .q_image_with_text_over .caption.no_icon {
-	margin-top: 25px;
+    margin-top: 25px;
 }
 
-@media screen and (max-width: 767px) {
-	.q_image_with_text_over .caption.no_icon {
-		font-size: 3em;
-		margin-top: 60px;
-	}
+@media screen and (max-width: 480px) {
+    .q_image_with_text_over .caption.no_icon {
+        font-size: 2em;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .q_image_with_text_over .caption.no_icon {
+        font-size: 3em;
+        margin-top: 60px;
+    }
 }
 
 @media screen and (width: 768px) {
-	.q_image_with_text_over .caption.no_icon {
-		font-size: 3em;
-		margin-top: 50px;
-	}
+    .q_image_with_text_over .caption.no_icon {
+        font-size: 3em;
+        margin-top: 50px;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1000px) {
-	.q_image_with_text_over .caption.no_icon {
-		font-size: 1.25em;
-	}
+    .q_image_with_text_over .caption.no_icon {
+        font-size: 1.25em;
+    }
 }
 
 .active .popmake-title {
-	text-align: center !important;
-	line-height: 2em !important;
+    text-align: center !important;
+    line-height: 2em !important;
 }
 
 .active .popmake-content {
-	display: flex;
-	text-align: center;
+    display: flex;
+    text-align: center;
 }
 
 .active .image_with_text img {
-	max-height: 362px;
-	margin: 0 auto;
-	margin-bottom: 15px;
+    max-height: 362px;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .qode-advanced-tabs .qode-advanced-tabs-nav li,
 .qode-accordion-holder .qode-title-holder.ui-state-active,
 .qode-accordion-holder .qode-title-holder.ui-state-hover {
-	background-color: #0b9444;
+    background-color: #0b9444;
 }
 
 .image_with_text h3 {
-	position: relative;
-	top: -170px;
-	font-size: 14px;
+    position: relative;
+    top: -170px;
+    font-size: 14px;
 }
