@@ -1,84 +1,99 @@
 header,
-nav.main_menu > ul > li > a,
+nav.main_menu>ul>li>a,
 .mobile_menu_button span,
-.side_menu_button > a,
+.side_menu_button>a,
 nav.mobile_menu ul li a,
 nav.mobile_menu ul li h3 {
-	color: black;
+    color: black;
 }
 
 h1 {
-	text-shadow: 3px 1px #0b9444;
+    text-shadow: 3px 1px #0b9444;
 }
 
 .content_inner {
-	margin-bottom: -1px;
+    margin-bottom: -1px;
 }
 
 @media screen and (min-width: 1130px) {
-	nav.main_menu > ul > li > a,
-	.search-text,
-	.footer_bottom ul li a {
-		font-size: 18px;
-	}
+    nav.main_menu>ul>li>a,
+    .search-text,
+    .footer_bottom ul li a {
+        font-size: 18px;
+    }
 }
 
 .header_inner_right {
-	display: none;
+    display: none;
 }
 
 .mobile_menu {
-	border-top: 1px solid #8cc63e;
+    border-top: 1px solid #8cc63e;
 }
 
 @media screen and (max-width: 768px) {
-	.mobile_menu {
-		text-align: center !important;
-	}
+    .mobile_menu {
+        text-align: center !important;
+    }
 }
 
 .mobile_menu_button {
-	margin: 0 20px;
+    margin: 0 20px;
 }
 
-@media screen and (min-width: 768px) {
-	#menu-footer.menu {
-		text-align: right;
-		padding-right: 15px;
-	}
+@media screen and (min-width: 769px) {
+    #menu-footer.menu {
+        text-align: right;
+        padding-right: 15px;
+    }
 }
 
 .header_bottom {
-	padding: 0;
+    padding: 0;
 }
 
 .post_info {
-	display: none !important;
+    display: none !important;
 }
 
 .footer_bottom_holder {
-	background-color: #262626;
+    background-color: #262626;
 }
 
 .about-link {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .logged-in-as {
-	display: none !important;
+    display: none !important;
 }
 
 .comment-respond h5 {
-	display: none !important;
+    display: none !important;
 }
 
 .footer_bottom ul li {
-	margin: 0;
-	padding: 0 20px;
-	height: 53px;
-	line-height: 53px;
+    margin: 0;
+    padding: 0 20px;
+    height: 53px;
+    line-height: 53px;
 }
 
 #chartContainer {
-	text-align: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .footer_bottom ul li {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer_bottom ul li {
+        padding: 0;
+    }
+    .footer_bottom ul li:first-child {
+        font-size: 8px;
+    }
 }
