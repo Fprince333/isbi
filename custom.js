@@ -1,3 +1,8 @@
+function openPDF(url) {
+  var w = window.open(url, "_blank");
+  w.focus();
+}
+
 // Download a file form a url.
 function saveFile(url) {
 	// Get file name from url.
@@ -112,7 +117,7 @@ $j(document).ready(function () {
 		setInterval(adjustPopUpCss, 500);
 		$j('.download-pdf').click(function (e) {
 			e.preventDefault();
-			saveFile($j(this).data().file);
+			openPDF($j(this).data().file);
 		});
 	}
 
@@ -122,7 +127,7 @@ $j(document).ready(function () {
 		$j('.download-pdf').css('cursor', 'pointer');
 		$j('.download-pdf').click(function (e) {
 			e.preventDefault();
-			saveFile($j(this).data().file);
+			openPDF($j(this).data().file);
 		});
 		$j('.popup-selector').each(function (i) {
 			$j(this)
