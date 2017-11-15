@@ -4,7 +4,6 @@
 - Login to the admin at isbinvestment.com/wp-admin and use the credentials provided
 
 ## CSS
----
 ### Master
 - There is one master CSS file for the entire site ```custom.css```
 - In the admin, navigate to ```Qode Options``` then click ```General``` then ```Custom Code```
@@ -14,7 +13,6 @@
 - Within a page, copy the CSS from the CSS file and paste it into the ```CSS``` box on the page builder
 
 ## JS
----
 
 ### Master 
 - Like with CSS, there is one master JS file for the entire site ```custom.js```
