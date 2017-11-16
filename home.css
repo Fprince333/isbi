@@ -1,10 +1,14 @@
 .homepage-top-row {
-    min-height: 90vh;
-    background-position: top !important;
+    height: 115vh;
+    width: 100vw;
+    position: absolute !important;
+    top: 0;
+    left: 0;
 }
 
 @media screen and (min-width: 1075px) {
     .homepage-top-row {
+        background-size: 125% auto !important;
         animation: background-zoom 10s;
         animation-fill-mode: forwards;
     }
@@ -12,12 +16,12 @@
 
 @keyframes background-zoom {
     0% {
-        background-size: 125% auto;
-        -webkit-background-size: 125% auto;
+        transform: scale(1.20);
+        -webkit-transform: scale(1.20);
     }
     100% {
-        background-size: 175% auto;
-        -webkit-background-size: 175% auto;
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
     }
 }
 
