@@ -1,5 +1,5 @@
 .homepage-top-row {
-    height: 115vh;
+    height: 100%;
     width: 100vw;
     position: absolute !important;
     top: 0;
@@ -8,6 +8,7 @@
 
 @media screen and (min-width: 1075px) {
     .homepage-top-row {
+        height: 115vh;
         background-size: 125% auto !important;
         animation: background-zoom 10s;
         animation-fill-mode: forwards;
