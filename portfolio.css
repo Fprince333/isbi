@@ -1,0 +1,12 @@
+.container {
+    background-color: transparent !important;
+    font-size: 18px;
+}
+
+#secondary-chart-container {
+    display: none;
+}
+
+.pie-container {
+    max-width: 600px;
+}
