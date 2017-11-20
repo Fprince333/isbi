@@ -1,15 +1,14 @@
 function showSecondaryChart(el) {
   $j("#portfolio-text").hide();
   $j("#secondary-chart-container").show();
-  $j("#secondary-chart-container canvas").each(function(i) {
+  $j("#secondary-chart-container canvas").each(function (i) {
     $j(this).hide();
   });
   $j(el).show();
 }
 
 var portfolioData = {
-  datasets: [
-    {
+  datasets: [{
       data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 5, 4, 3],
       backgroundColor: [
         "#fff",
@@ -56,185 +55,151 @@ var portfolioData = {
     "Emerging Markets",
     "Private Equity",
     "TIPS",
-    "Core",
-    "Non-Core"
+    "Core Real Estate",
+    "Non-Core Real Estate"
   ]
 };
 
 var centerPortfolioData = {
-  datasets: [
-    {
-      data: [76.5, 23.5],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [76.5, 23.5],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var privateEquityData = {
-  datasets: [
-    {
-      data: [0, 100],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [0, 100],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var coreRealEstateData = {
-  datasets: [
-    {
-      data: [100, 0],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [100, 0],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var nonCoreRealEstateData = {
-  datasets: [
-    {
-      data: [0, 100],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [0, 100],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var infrastructureData = {
-  datasets: [
-    {
-      data: [0, 100],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [0, 100],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var highYieldData = {
-  datasets: [
-    {
-      data: [0, 100],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [0, 100],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var opportunisticDebtData = {
-  datasets: [
-    {
-      data: [0, 100],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [0, 100],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var emergingMarketDebtData = {
-  datasets: [
-    {
-      data: [100, 0],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [100, 0],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var intermediateInvestmentData = {
-  datasets: [
-    {
-      data: [95, 5],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [95, 5],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var longTermGovernmentData = {
-  datasets: [
-    {
-      data: [95.2, 4.8],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [95.2, 4.8],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var tipsData = {
-  datasets: [
-    {
-      data: [99.4, 0.6],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [99.4, 0.6],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var usData = {
-  datasets: [
-    {
-      data: [90.3, 9.7],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [90.3, 9.7],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var developedForeignEquityData = {
-  datasets: [
-    {
-      data: [70.7, 29.3],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [70.7, 29.3],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var emergingMarketsData = {
-  datasets: [
-    {
-      data: [83.4, 16.6],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [83.4, 16.6],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var equitiesData = {
-  datasets: [
-    {
-      data: [78.4, 21.6],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [78.4, 21.6],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var realEstateData = {
-  datasets: [
-    {
-      data: [59.1, 40.9],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [59.1, 40.9],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 var fixedIncomeData = {
-  datasets: [
-    {
-      data: [69, 31],
-      backgroundColor: ["#3498db", "#f1c40f"]
-    }
-  ],
+  datasets: [{
+    data: [69, 31],
+    backgroundColor: ["#3498db", "#f1c40f"]
+  }],
   labels: ["Passive", "Active"]
 };
 
 if (window.location.pathname.indexOf("portfolio") > -1) {
   var privateEquity = document.getElementById("private-equity");
-  var coreRealEstate = document.getElementById("core");
-  var nonCoreRealEstate = document.getElementById("non-core");
+  var coreRealEstate = document.getElementById("core real estate");
+  var nonCoreRealEstate = document.getElementById("non-core real estate");
   var infrastructure = document.getElementById("infrastructure");
   var highYield = document.getElementById("high-yield");
   var opportunisticDebt = document.getElementById("opportunistic-debt");
@@ -259,7 +224,6 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
     type: "pie",
     data: portfolioData,
     options: {
-      responsive: false,
       legend: {
         display: false
       },
@@ -269,18 +233,18 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
       animation: {
         animateScale: true,
         duration: 2500,
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -363,13 +327,13 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
           ctx.destroy();
         }
       },
-      onHover: function(event) {
+      onHover: function (event) {
         let chartId =
           "#" +
           this.active[0]._model.label
-            .toLowerCase()
-            .replace(/\./g, "")
-            .replace(/ +/g, "-");
+          .toLowerCase()
+          .replace(/\./g, "")
+          .replace(/ +/g, "-");
         if (chartId === "#portfolio") {
           chartId = "#second-portfolio";
         }
@@ -394,19 +358,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -446,19 +410,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -487,7 +451,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
     options: {
       title: {
         display: true,
-        text: "Core Real Assets",
+        text: "Core Real Estate",
         fontColor: "#8cc63e",
         fontSize: 24
       },
@@ -498,19 +462,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -539,7 +503,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
     options: {
       title: {
         display: true,
-        text: "Non Core Real Assets",
+        text: "Non Core Real Estate",
         fontColor: "#8cc63e",
         fontSize: 24
       },
@@ -550,19 +514,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -602,19 +566,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -654,19 +618,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -706,19 +670,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -758,19 +722,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -810,19 +774,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -862,19 +826,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -914,19 +878,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -966,19 +930,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -1018,19 +982,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -1070,19 +1034,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -1122,19 +1086,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -1174,19 +1138,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
@@ -1227,19 +1191,19 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
         }
       },
       animation: {
-        onComplete: function() {
+        onComplete: function () {
           var ctx = this.chart.ctx;
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
-          this.data.datasets.forEach(function(dataset) {
+          this.data.datasets.forEach(function (dataset) {
             for (var i = 0; i < dataset.data.length; i++) {
               var model =
                 dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
                 total = dataset._meta[Object.keys(dataset._meta)[0]].total,
                 mid_radius =
-                  model.innerRadius +
-                  (model.outerRadius - model.innerRadius) / 2,
+                model.innerRadius +
+                (model.outerRadius - model.innerRadius) / 2,
                 start_angle = model.startAngle,
                 end_angle = model.endAngle,
                 mid_angle = start_angle + (end_angle - start_angle) / 2;
