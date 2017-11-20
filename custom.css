@@ -45,6 +45,12 @@ h1 {
     #menu-footer.menu {
         text-align: right;
         padding-right: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .footer_bottom ul li:first-child {
+        position: absolute;
+        left: 0;
     }
 }
 
