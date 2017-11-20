@@ -254,6 +254,9 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
 
               ctx.fillStyle = "#444";
               ctx.font = "12px Lato";
+              if ($j(window).width() < 601) {
+                ctx.font = "6px Lato";
+              }
               var label = model.label;
               var percent =
                 String(Math.round(dataset.data[i] / total * 100)) + "%";
@@ -263,27 +266,52 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
               } else {
                 if (label === "Infrastructure") {
                   ctx.fillText("Infra-", model.x + x, model.y + y);
-                  ctx.fillText("structure", model.x + x, model.y + y + 15);
-                  ctx.fillText("2%", model.x + x, model.y + y + 30);
+                  if ($j(window).width() < 601) { 
+                    ctx.fillText("structure", model.x + x, model.y + y + 5);
+                    ctx.fillText("2%", model.x + x, model.y + y + 15);
+                  } else {
+                    ctx.fillText("structure", model.x + x, model.y + y + 15);
+                    ctx.fillText("2%", model.x + x, model.y + y + 30);  
+                  }
                 } else if (label === "Non-Core Real Estate") {
                   ctx.fillText("Non-Core", model.x + x, model.y + y);
-                  ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
-                  ctx.fillText("4.5%", model.x + x, model.y + y + 30);
-                } else if (label === "Core Real Estate") {
-                  ctx.fillText("Core", model.x + x, model.y + y);                  
-                  ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
-                  ctx.fillText("5.5%", model.x + x, model.y + y + 30);
+                  if ($j(window).width() < 601) { 
+                    ctx.fillText("Real Estate", model.x + x, model.y + y + 10);
+                    ctx.fillText("4.5%", model.x + x, model.y + y + 20);
+                  } else {
+                    ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
+                    ctx.fillText("4.5%", model.x + x, model.y + y + 30);
+                  }                 
+                } else if (label === "Core Real Estate") {               
+                  if ($j(window).width() < 601) { 
+                    ctx.fillText("Core", model.x + x, model.y + y + 10);
+                    ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
+                    ctx.fillText("5.5%", model.x + x, model.y + y + 20);
+                  } else {
+                    ctx.fillText("Core", model.x + x, model.y + y);
+                    ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
+                    ctx.fillText("5.5%", model.x + x, model.y + y + 30);
+                  }                 
                 } else if (label === "Emerging Market Debt") {
-                  ctx.fillText(
-                    label.split(" ")[0] + " " + label.split(" ")[1],
-                    model.x + x,
-                    model.y + y + 10
-                  );
-                  ctx.fillText(
-                    label.split(" ")[2] + " " + "2%",
-                    model.x + x,
-                    model.y + y + 25
-                  );
+                  if ($j(window).width() < 601) { 
+                    ctx.fillText(
+                      label.split(" ")[0] + " " + label.split(" ")[1],
+                      model.x + x,
+                      model.y + y + 5
+                    );
+                    ctx.fillText(
+                      label.split(" ")[2] + " " + "2%",
+                      model.x + x,
+                      model.y + y + 15
+                    );
+                  } else {
+                    ctx.fillText(
+                      label.split(" ")[0] + " " + label.split(" ")[1],
+                      model.x + x,
+                      model.y + y + 10
+                    );
+                    ctx.fillText(label.split(" ")[2] + " " + "2%", model.x + x, model.y + y + 25);
+                  }                 
                 } else if (label === "Intermediate Investment") {
                   ctx.fillText(label.split(" ")[0], model.x + x, model.y + y);
                   ctx.fillText(
@@ -294,12 +322,17 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                   ctx.fillText("14%", model.x + x, model.y + y + 30);
                 } else if (label === "Long-term Government") {
                   ctx.fillText(label.split(" ")[0], model.x + x, model.y + y);
-                  ctx.fillText(
-                    label.split(" ")[1],
-                    model.x + x,
-                    model.y + y + 15
-                  );
-                  ctx.fillText("4%", model.x + x, model.y + y + 30);
+                  if ($j(window).width() < 601) { 
+                    ctx.fillText(label.split(" ")[1], model.x + x, model.y + y + 5);
+                    ctx.fillText("4%", model.x + x, model.y + y + 15);
+                  } else {
+                    ctx.fillText(
+                      label.split(" ")[1],
+                      model.x + x,
+                      model.y + y + 15
+                    );
+                    ctx.fillText("4%", model.x + x, model.y + y + 30);
+                  }
                 } else if (label === "TIPS") {
                   ctx.fillText(label, model.x + x, model.y + y);
                   ctx.fillText("4%", model.x + x, model.y + y + 15);
