@@ -198,8 +198,8 @@ var fixedIncomeData = {
 
 if (window.location.pathname.indexOf("portfolio") > -1) {
   var privateEquity = document.getElementById("private-equity");
-  var coreRealEstate = document.getElementById("core real estate");
-  var nonCoreRealEstate = document.getElementById("non-core real estate");
+  var coreRealEstate = document.getElementById("core-real-estate");
+  var nonCoreRealEstate = document.getElementById("non-core-real-estate");
   var infrastructure = document.getElementById("infrastructure");
   var highYield = document.getElementById("high-yield");
   var opportunisticDebt = document.getElementById("opportunistic-debt");
@@ -266,11 +266,13 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                   ctx.fillText("structure", model.x + x, model.y + y + 15);
                   ctx.fillText("2%", model.x + x, model.y + y + 30);
                 } else if (label === "Non-Core Real Estate") {
-                  ctx.fillText(label, model.x + x, model.y + y);
-                  ctx.fillText("4.5%", model.x + x, model.y + y + 15);
+                  ctx.fillText("Non-Core", model.x + x, model.y + y);
+                  ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
+                  ctx.fillText("4.5%", model.x + x, model.y + y + 30);
                 } else if (label === "Core Real Estate") {
-                  ctx.fillText(label, model.x + x, model.y + y);
-                  ctx.fillText("5.5%", model.x + x, model.y + y + 15);
+                  ctx.fillText("Core", model.x + x, model.y + y);                  
+                  ctx.fillText("Real Estate", model.x + x, model.y + y + 15);
+                  ctx.fillText("5.5%", model.x + x, model.y + y + 30);
                 } else if (label === "Emerging Market Debt") {
                   ctx.fillText(
                     label.split(" ")[0] + " " + label.split(" ")[1],
