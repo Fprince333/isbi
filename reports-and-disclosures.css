@@ -53,6 +53,7 @@ h6 {
 .active .popmake-content {
 	display: flex;
 	text-align: center;
+	flex-wrap: wrap;
 }
 
 .active .image_with_text img {

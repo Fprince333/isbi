@@ -115,3 +115,7 @@ h1 {
 html.pum-open.pum-open-overlay.pum-open-scrollable body>[aria-hidden] {
     padding: 0;
 }
+
+.popmake-content .image_with_text {
+    max-width: 200px;
+}
