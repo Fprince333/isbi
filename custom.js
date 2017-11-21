@@ -34,11 +34,13 @@ function adjustPdfCss() {
 		) {
 			$j('.download-pdf').css(
 				'height',
-				$j('.caption')
+				$j('.desc')
 				.parent()
 				.height()
 			);
 			clearInterval(poll)
+		} else {
+			$j(".download-pdf").css("height", $j(".shader").height());
 		}
 	}
 }
