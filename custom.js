@@ -81,7 +81,7 @@ $j(document).ready(function () {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
-	$j('.aum .counter').append('<span style="float:left"> Billion</span>');
+	$j('.aum .counter').append('<span style="float:left; padding-left: 5px;"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
 	$j('.passive .counter').append('%');
 	$j('.side_menu_button_wrapper').prepend('<p class="search-text">SEARCH</p>');
