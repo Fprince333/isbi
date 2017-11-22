@@ -106,6 +106,7 @@
     .q_counter_holder {
         padding: 20px 10px !important;
     }
+    .aum .counter_text,
     .returns .counter_text {
         font-size: 18px !important;
     }
