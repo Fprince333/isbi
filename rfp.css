@@ -1,0 +1,39 @@
+.container {
+    background-color: transparent !important;
+}
+
+.q_image_with_text_over .text:hover .caption {
+    opacity: 1;
+}
+
+h3.caption {
+    font-size: 13px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+.active .popmake-title {
+    text-align: center !important;
+    line-height: 2em !important;
+}
+
+.active .popmake-content {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.active .image_with_text img {
+    max-height: 362px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.active .image_with_text h3 {
+    position: relative;
+    top: -145px;
+    font-size: 14px;
+}
