@@ -82,6 +82,7 @@ function adjustPopUpCss() {
 $j(document).ready(function () {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
+	const isRfpPage = window.location.href.indexOf("rfp") > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left; padding-left: 5px;"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
@@ -123,7 +124,7 @@ $j(document).ready(function () {
 		});
 	}
 
-	if (isReportsAndDisclosuresPage) {
+	if (isReportsAndDisclosuresPage || isRfpPage) {
 		setInterval(adjustPdfCss, 500);
 		setInterval(adjustPopUpCss, 500);
 		$j('.download-pdf').css('cursor', 'pointer');
