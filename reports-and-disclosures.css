@@ -1,70 +1,75 @@
 .container {
-	background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .qode-accordion-content-inner {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 15px;
-	background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
 }
 
 .q_elements_item {
-	width: 25%;
+    width: 25%;
 }
 
 .qode-banner .qode-banner-content {
-	background-color: transparent;
-	font-size: 16px;
-	line-height: 1em;
-	color: black;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1em;
+    color: black;
 }
 
 @media screen and (max-width: 480px) {
-	.qode-banner .qode-banner-content {
-		font-size: 9px;
-	}
+    .qode-banner .qode-banner-content {
+        font-size: 9px;
+    }
 }
 
 .qode-advanced-tabs .qode-advanced-tabs-nav li,
 .qode-accordion-holder .qode-title-holder.ui-state-active,
 .qode-accordion-holder .qode-title-holder.ui-state-hover {
-	background-color: #0b9444;
+    background-color: #0b9444;
 }
 
 .q_image_with_text_over .text:hover .caption {
-	opacity: 1;
+    opacity: 1;
 }
 
 h3.caption {
-	font-size: 13px;
+    font-size: 13px;
 }
 
 h6 {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 .active .popmake-title {
-	text-align: center !important;
-	line-height: 2em !important;
+    text-align: center !important;
+    line-height: 2em !important;
 }
 
 .active .popmake-content {
-	display: flex;
-	text-align: center;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .active .image_with_text img {
-	max-height: 362px;
-	margin: 0 auto;
-	margin-bottom: 15px;
+    max-height: 362px;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .active .image_with_text h3 {
-	position: relative;
-	top: -145px;
-	font-size: 14px;
+    position: relative;
+    top: -145px;
+    font-size: 14px;
+}
+
+.vc_custom_1511359222954 {
+	width: 100%; 
+	text-align: center;
 }
