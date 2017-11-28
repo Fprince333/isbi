@@ -79,10 +79,19 @@ function adjustPopUpCss() {
 	}
 }
 
+function showDefaultSecondaryPortfolio() {
+	$j('#secondary-chart-container').show();
+	$j("#secondary-chart-container canvas").each(function (i) {
+		$j(this).hide();
+	});
+	$j("#second-portfolio").show();
+}
+
 $j(document).ready(function () {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
 	const isRfpPage = window.location.href.indexOf("rfp") > -1;
+	const isPortfolioPage = window.location.href.indexOf("portfolio") > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left; padding-left: 5px;"> Billion</span>');
 	$j('.returns .counter').append('<span style="float:left">%</span>');
@@ -106,9 +115,12 @@ $j(document).ready(function () {
 	});
 
 	$j('#portfolio').on('mouseleave', function () {
-		$j('#secondary-chart-container').hide();
-		$j('#portfolio-text').show();
+		showDefaultSecondaryPortfolio()
 	});
+
+	if (isPortfolioPage) {
+		showDefaultSecondaryPortfolio()
+	}
 
 	if (isMeetingsPage) {
 		$j('.popup-selector').each(function (i) {
