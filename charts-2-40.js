@@ -49,12 +49,12 @@ var portfolioData = {
     "Emerging Market Debt",
     "Intermediate Investment",
     "Long-term Government",
-    "Infrastructure",
+    "TIPS",
     "U.S.",
     "Developed Foreign Equity",
     "Emerging Markets",
     "Private Equity",
-    "TIPS",
+    "Infrastructure",
     "Core Real Estate",
     "Non-Core Real Estate"
   ]
