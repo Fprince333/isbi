@@ -9,7 +9,7 @@ function showSecondaryChart(el) {
 
 var portfolioData = {
   datasets: [{
-      data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 5, 4, 3],
+      data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 3, 5, 4],
       backgroundColor: [
         "#fff",
         "#0b9444",
