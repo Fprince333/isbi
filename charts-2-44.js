@@ -1,3 +1,8 @@
+const numberWithCommas = x => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+
 function showSecondaryChart(el) {
   $j("#portfolio-text").hide();
   $j("#secondary-chart-container").show();
@@ -419,7 +424,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -471,7 +476,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -523,7 +528,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -575,7 +580,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -627,7 +632,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -679,7 +684,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -731,7 +736,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -783,7 +788,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -835,7 +840,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -887,7 +892,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -939,7 +944,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -991,7 +996,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -1043,7 +1048,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -1095,7 +1100,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -1147,7 +1152,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -1199,7 +1204,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
@@ -1252,7 +1257,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.fillStyle = "#444";
               }
               var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+                numberWithCommas(dataset.data[i]) + "%";
               // Display percent in another line, line break doesn't work for fillText
               ctx.fillText(percent, model.x + x, model.y + y + 15);
             }
