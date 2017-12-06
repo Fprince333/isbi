@@ -1,6 +1,6 @@
 function openPDF(url) {
-  var w = window.open(url, "_blank");
-  w.focus();
+	var w = window.open(url, "_blank");
+	w.focus();
 }
 
 // Download a file form a url.
@@ -91,6 +91,7 @@ $j(document).ready(function () {
 	const isMeetingsPage = window.location.href.indexOf('meetings') > -1;
 	const isReportsAndDisclosuresPage = window.location.href.indexOf('reports-and-disclosures') > -1;
 	const isRfpPage = window.location.href.indexOf("rfp") > -1;
+	const isPressReleasePage = window.location.href.indexOf("press-release") > -1;
 	const isPortfolioPage = window.location.href.indexOf("portfolio") > -1;
 	$j('.aum .counter').prepend('<span style="float:left">$</span>');
 	$j('.aum .counter').append('<span style="float:left; padding-left: 5px;"> Billion</span>');
@@ -98,7 +99,7 @@ $j(document).ready(function () {
 	$j('.passive .counter').append('%');
 	$j('.side_menu_button_wrapper').prepend('<p class="search-text">SEARCH</p>');
 	$j('#menu-footer').prepend(
-		'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 || Chicago, IL  60601 || <a style="font-size: inherit" href="tel:312-793-5718">312-793-5718</a></li>'
+		'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 | Chicago, IL  60601 |<a style="font-size: inherit; color:#8cc63e"> O </a><a style="font-size: inherit" href="tel:312-793-5718">(312) 793-5718</a><a style="font-size: inherit; color:#8cc63e"> F </a>(312) 793-2266</li>'
 	);
 
 	$j('.search-text').on('click', function () {
@@ -136,7 +137,7 @@ $j(document).ready(function () {
 		});
 	}
 
-	if (isReportsAndDisclosuresPage || isRfpPage) {
+	if (isReportsAndDisclosuresPage || isRfpPage || isPressReleasePage) {
 		setInterval(adjustPdfCss, 500);
 		setInterval(adjustPopUpCss, 500);
 		$j('.download-pdf').css('cursor', 'pointer');
