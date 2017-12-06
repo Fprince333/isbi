@@ -8,12 +8,14 @@ function showSecondaryChart(el) {
 }
 
 var portfolioData = {
-  datasets: [{
-      data: [0, 0, 0, 0, 5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 3, 5, 4],
+  datasets: [
+    {
+      data: [0, 0, 0, 0, 2.5, 2.5, 8, 4, 10, 5, 5, 23, 13, 8, 7, 3, 5, 4],
       backgroundColor: [
         "#fff",
         "#0b9444",
         "#8cc63e",
+        "#0b9444",
         "#0b9444",
         "#0b9444",
         "#0b9444",
@@ -45,6 +47,7 @@ var portfolioData = {
     "Equities",
     "Real Assets",
     "High Yield",
+    "Bank Loans",
     "Opportunistic Debt",
     "Emerging Market Debt",
     "Intermediate Investment",
@@ -258,8 +261,7 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                 ctx.font = "6px Lato";
               }
               var label = model.label;
-              var percent =
-                String(Math.round(dataset.data[i] / total * 100)) + "%";
+              var percent = dataset.data[i].toLocaleString() + "%";
 
               if (percent === "0%") {
                 console.log("returning");
@@ -273,6 +275,14 @@ if (window.location.pathname.indexOf("portfolio") > -1) {
                     ctx.fillText("structure", model.x + x, model.y + y + 15);
                     ctx.fillText("2%", model.x + x, model.y + y + 30);  
                   }
+                } else if (label === "High Yield") {
+                  ctx.fillText("High", model.x + x, model.y + y - 10);
+                  ctx.fillText("Yield", model.x + x, model.y + y);
+                  ctx.fillText(percent, model.x + x, model.y + y + 10);                                    
+                } else if (label === "Bank Loans") {
+                  ctx.fillText("Bank", model.x + x, model.y + y - 10);
+                  ctx.fillText("Loans", model.x + x, model.y + y);
+                  ctx.fillText(percent, model.x + x, model.y + y + 10); 
                 } else if (label === "Non-Core Real Estate") {
                   ctx.fillText("Non-Core", model.x + x, model.y + y);
                   if (window.innerWidth < 601) { 
