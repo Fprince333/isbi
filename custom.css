@@ -46,11 +46,7 @@ h1 {
 		text-align: right;
 		padding-right: 15px;
 		display: flex;
-		justify-content: flex-end;
-	}
-	.footer_bottom ul li:first-child {
-		position: absolute;
-		left: 0;
+		justify-content: space-evenly;
 	}
 }
 
@@ -120,7 +116,7 @@ h1 {
 		padding: 0;
 	}
 	.footer_bottom ul li:first-child {
-		font-size: 8px;
+		font-size: 12px;
 	}
 }
 
