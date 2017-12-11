@@ -109,16 +109,23 @@ $j(document).ready(function () {
 	}
 	$j(window).resize(function () {
 		if ($j(window).width() > 600) {
-			$j('#menu-footer li:first-child').html(
+			if ($j('#menu-footer li:nth-child(2)').html().indexOf("312") > -1) {
+				$j("#menu-footer li:nth-child(2)").remove();
+			}
+			$j('#menu-footer li:first-child').replaceWith(
 				'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 | Chicago, IL  60601 |<a style="font-size: inherit; color:#8cc63e"> O </a><a style="font-size: inherit" href="tel:312-793-5718">(312) 793-5718</a><a style="font-size: inherit; color:#8cc63e"> F </a>(312) 793-2266</li>'
 			);
 		} else {
 			$j('#menu-footer li:first-child').replaceWith(
 				'<li style="float: left; color: white;">180 North LaSalle Street, Suite 2015 | Chicago, IL  60601 </li>'
 			);
-			$j('#menu-footer li:nth-child(2)').replaceWith(
-				'<li style="float: left; color: white"><a style="font-size: inherit; color:#8cc63e"> O </a><a style="font-size: inherit" href="tel:312-793-5718">(312) 793-5718</a><a style="font-size: inherit; color:#8cc63e"> F </a>(312) 793-2266</li>'
-			);
+			if ($j("#menu-footer li:nth-child(2)")
+          .html()
+          .indexOf("Meetings") > -1) {
+						$j("#menu-footer li:nth-child(2)").replaceWith('<li style="float: left; color: white"><a style="font-size: inherit; color:#8cc63e"> O </a><a style="font-size: inherit" href="tel:312-793-5718">(312) 793-5718</a><a style="font-size: inherit; color:#8cc63e"> F </a>(312) 793-2266</li><li id="menu-item-536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536"><a href="https://www.isbinvestment.com/meetings/">Meetings</a></li>');
+					} else {
+						$j("#menu-footer li:nth-child(2)").replaceWith('<li style="float: left; color: white"><a style="font-size: inherit; color:#8cc63e"> O </a><a style="font-size: inherit" href="tel:312-793-5718">(312) 793-5718</a><a style="font-size: inherit; color:#8cc63e"> F </a>(312) 793-2266</li>');
+					}
 		}
 	});
 
