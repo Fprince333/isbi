@@ -45,8 +45,6 @@ h1 {
     #menu-footer.menu {
         text-align: right;
         padding-right: 15px;
-        display: flex;
-        justify-content: space-evenly;
     }
 }
 
